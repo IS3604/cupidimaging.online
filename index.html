@@ -1,0 +1,557 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#0e1755">
+<meta name="description" content="Cupid Imaging LLC provides self-pay mobile diagnostic ultrasound across Georgia. See exams, prices and request an appointment.">
+<title>Cupid Imaging LLC | Mobile Ultrasound in Georgia</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#0e1755;--navy-2:#1a2470;--ink:#1c2350;--blue:#4559b3;--blue-d:#36479a;--sky:#e9edfb;--rose:#e8335f;--rose-d:#cc2450;--rose-l:#fde8ee;--mist:#f4f6fc;--line:#e1e5f2;--muted:#5c6382;--white:#fff;--font:'Plus Jakarta Sans',system-ui,-apple-system,'Segoe UI',Arial,sans-serif;--shadow:0 18px 40px -18px rgba(14,23,85,.28);--r:16px}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:#fff;color:var(--ink);font:400 16.5px/1.65 var(--font);-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%;height:auto}a{color:inherit}button,input,select,textarea{font:inherit;color:inherit}
+:focus-visible{outline:3px solid var(--rose);outline-offset:3px;border-radius:6px}
+.wrap{width:min(1180px,100% - 48px);margin-inline:auto}
+.ic{width:1em;height:1em;flex-shrink:0;vertical-align:-.14em}
+.skip{position:absolute;left:12px;top:-60px;background:#fff;padding:10px 14px;z-index:99}.skip:focus{top:12px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+h1,h2,h3{margin:0;color:var(--navy);letter-spacing:-.02em}
+h1{font-size:clamp(38px,4.8vw,58px);line-height:1.08;font-weight:800}
+h2{font-size:clamp(30px,3.3vw,42px);line-height:1.15;font-weight:800}
+h3{font-size:19px;line-height:1.3;font-weight:700;letter-spacing:-.01em}
+p{margin:0}
+.sub{color:var(--muted);font-size:17.5px;max-width:36em}
+.head{max-width:640px;margin-bottom:40px}.head h2{margin-bottom:14px}
+.head.center{margin-inline:auto;text-align:center}.head.center .sub{margin-inline:auto}
+.minis{list-style:none;padding:0;margin:0}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:15px 26px;border-radius:999px;font-weight:700;font-size:15.5px;text-decoration:none;border:1.5px solid transparent;cursor:pointer;transition:background .15s,border-color .15s,color .15s}
+.btn .ic{width:18px;height:18px}
+.btn-rose{background:var(--rose);color:#fff}.btn-rose:hover{background:var(--rose-d)}
+.btn-blue{background:var(--blue);color:#fff}.btn-blue:hover{background:var(--blue-d)}
+.btn-line{border-color:rgba(255,255,255,.45);color:#fff}.btn-line:hover{border-color:#fff;background:rgba(255,255,255,.08)}
+.btn-white{background:#fff;color:var(--navy)}.btn-white:hover{background:var(--sky)}
+
+/* top bar + header */
+.topbar{background:var(--navy);color:#c4cbef;font-size:14px}
+.topbar .wrap{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:9px 0}
+.topbar .tb{display:flex;gap:24px;align-items:center}
+.topbar a,.topbar span{display:inline-flex;align-items:center;gap:8px;text-decoration:none}
+.topbar a{color:#fff;font-weight:600}.topbar .ic{color:var(--rose)}
+.header{position:sticky;top:0;z-index:30;background:rgba(255,255,255,.96);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:24px;min-height:80px}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none}
+.brand-mark{width:46px;height:46px;border-radius:14px;background:linear-gradient(140deg,var(--rose),#f2587e);display:grid;place-items:center;color:#fff;box-shadow:0 8px 18px -8px rgba(232,51,95,.7)}
+.brand-mark .ic{width:22px;height:22px}
+.brand strong{display:block;font-size:20px;font-weight:800;color:var(--navy);line-height:1.1;letter-spacing:-.02em}
+.brand small{display:block;font-size:13px;color:var(--muted);font-weight:500}
+.nav nav{display:flex;align-items:center;gap:32px;font-size:15px;font-weight:600}
+.nav nav a{text-decoration:none;color:var(--ink)}.nav nav a:not(.btn):hover{color:var(--rose)}
+.nav nav a.btn{color:#fff;padding:12px 22px}
+.menu-btn{display:none;border:1px solid var(--line);background:#fff;border-radius:12px;padding:10px;line-height:0;cursor:pointer;color:var(--navy)}
+.menu-btn .ic{width:22px;height:22px}
+
+/* hero */
+.hero{position:relative;background:radial-gradient(900px 500px at 85% 10%,rgba(84,114,210,.55),transparent 60%),linear-gradient(135deg,var(--navy) 0%,#17217a 60%,#24318f 100%);color:#d3d9f5;padding:84px 0 150px;overflow:hidden}
+.hero::after{content:'';position:absolute;inset:auto -10% -2px -10%;height:90px;background:#fff;border-radius:50% 50% 0 0/100% 100% 0 0}
+.hero-grid{position:relative;z-index:1;display:grid;grid-template-columns:1.05fr .95fr;gap:60px;align-items:center}
+.pill{display:inline-flex;align-items:center;gap:9px;padding:8px 16px 8px 10px;border-radius:999px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.18);color:#fff;font-size:14px;font-weight:600;margin-bottom:26px}
+.pill i{width:24px;height:24px;border-radius:50%;background:var(--rose);display:grid;place-items:center}
+.pill .ic{width:13px;height:13px;color:#fff}
+.hero h1{color:#fff}
+.hero .sub{color:#c9d0f2;margin:22px 0 34px;font-size:18.5px}
+.hero-actions{display:flex;flex-wrap:wrap;gap:12px}
+.checks{display:flex;flex-wrap:wrap;gap:12px 28px;margin-top:38px;font-size:15px;font-weight:600;color:#fff}
+.checks li{display:flex;align-items:center;gap:9px}
+.checks i{width:22px;height:22px;border-radius:50%;background:rgba(255,255,255,.14);display:grid;place-items:center}
+.checks .ic{width:13px;height:13px;color:#8fe3b9}
+.hero-media{position:relative;margin:0;padding:0 0 0 28px}
+.hero-media::before{content:'';position:absolute;right:-30px;top:-30px;width:220px;height:220px;border-radius:50%;border:2px dashed rgba(255,255,255,.25)}
+.hero-media img{position:relative;width:100%;aspect-ratio:1/1.05;object-fit:cover;border-radius:28px;border:6px solid rgba(255,255,255,.12);background:#2a357f}
+.float{position:absolute;background:#fff;color:var(--ink);border-radius:16px;padding:14px 18px;box-shadow:var(--shadow);display:flex;align-items:center;gap:13px}
+.float i{width:44px;height:44px;border-radius:12px;display:grid;place-items:center;flex-shrink:0}
+.float .ic{width:22px;height:22px}
+.float strong{display:block;color:var(--navy);font-size:15px;line-height:1.25}
+.float span{font-size:13px;color:var(--muted)}
+.float-a{left:-10px;bottom:46px}.float-a i{background:var(--rose-l);color:var(--rose)}
+.float-b{right:-14px;top:40px}.float-b i{background:var(--sky);color:var(--blue)}
+
+/* facts */
+.facts{position:relative;z-index:2;margin-top:-104px}
+.facts ul{display:grid;grid-template-columns:repeat(3,1fr);background:#fff;border-radius:22px;box-shadow:0 30px 60px -30px rgba(14,23,85,.35);border:1px solid var(--line)}
+.facts li{display:flex;gap:18px;align-items:flex-start;padding:32px 30px}
+.facts li+li{border-left:1px solid var(--line)}
+.facts i{width:54px;height:54px;border-radius:16px;display:grid;place-items:center;flex-shrink:0;background:var(--sky);color:var(--blue)}
+.facts li:nth-child(2) i{background:var(--rose-l);color:var(--rose)}
+.facts .ic{width:25px;height:25px}
+.facts strong{display:block;color:var(--navy);font-size:17px;margin-bottom:2px}
+.facts span{font-size:15px;color:var(--muted)}
+
+/* sections */
+.section{padding:84px 0}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+.collage{position:relative;padding:0 70px 70px 0}
+.collage img{width:100%;aspect-ratio:4/3.4;object-fit:cover;border-radius:24px;background:var(--line)}
+.collage .small{position:absolute;right:0;bottom:0;width:50%;aspect-ratio:1;border-radius:20px;border:8px solid #fff;box-shadow:var(--shadow)}
+.badge{position:absolute;left:24px;bottom:96px;background:var(--navy);color:#fff;border-radius:16px;padding:16px 20px;max-width:200px;box-shadow:var(--shadow)}
+.badge strong{display:block;font-size:30px;line-height:1;font-weight:800}
+.badge span{font-size:13.5px;color:#c4cbef}
+.about h2{margin-bottom:20px}
+.about p.sub{margin-bottom:16px}
+.specs{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:28px 0 32px}
+.specs li{display:flex;align-items:center;gap:12px;padding:13px 16px;border-radius:12px;background:var(--mist);border:1px solid var(--line);font-weight:600;font-size:15px;color:var(--navy)}
+.specs i{width:32px;height:32px;border-radius:9px;background:#fff;display:grid;place-items:center;color:var(--rose)}
+.specs .ic{width:17px;height:17px}
+
+/* services */
+.services{background:var(--mist)}
+.toolbar{display:flex;flex-wrap:wrap;gap:16px;align-items:center;justify-content:space-between;margin-bottom:28px}
+.filters{display:flex;flex-wrap:wrap;gap:8px}
+.category{border:1px solid var(--line);background:#fff;color:var(--ink);border-radius:999px;padding:9px 16px;font-size:14px;font-weight:600;cursor:pointer;transition:all .15s}
+.category b{display:inline-grid;place-items:center;min-width:24px;height:22px;padding:0 6px;margin-left:6px;border-radius:999px;background:var(--mist);font-size:12px;color:var(--muted)}
+.category:hover{border-color:var(--blue)}
+.category.active{background:var(--navy);border-color:var(--navy);color:#fff}.category.active b{background:rgba(255,255,255,.16);color:#fff}
+.search{position:relative;flex:0 1 300px}
+.search .ic{position:absolute;left:16px;top:50%;transform:translateY(-50%);color:var(--muted)}
+.search input{width:100%;padding:12px 16px 12px 44px;border:1px solid var(--line);border-radius:999px;background:#fff}
+.search input:focus{outline:none;border-color:var(--blue);box-shadow:0 0 0 4px rgba(69,89,179,.15)}
+.service-list{columns:2;column-gap:28px;column-fill:balance}
+.cat{break-inside:avoid;margin:0 0 28px;background:#fff;border-radius:20px;overflow:hidden;border:1px solid var(--line);box-shadow:0 14px 30px -24px rgba(14,23,85,.35)}
+.cat figure{position:relative;margin:0;height:190px;background:var(--navy)}
+.cat figure img{width:100%;height:100%;object-fit:cover}
+.cat figure::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(14,23,85,0) 30%,rgba(14,23,85,.85))}
+.cat figcaption{position:absolute;z-index:1;left:22px;right:22px;bottom:16px;display:flex;justify-content:space-between;align-items:flex-end;gap:12px;color:#fff}
+.cat figcaption h3{color:#fff;font-size:22px;display:flex;align-items:center;gap:10px}
+.cat figcaption h3 i{width:34px;height:34px;border-radius:10px;background:var(--rose);display:grid;place-items:center}
+.cat figcaption h3 .ic{width:18px;height:18px}
+.cat figcaption span{font-size:13px;font-weight:600;background:rgba(255,255,255,.18);padding:4px 10px;border-radius:999px;white-space:nowrap}
+.rows{padding:8px 22px 12px}
+.row{display:flex;align-items:center;gap:14px;padding:12px 0;font-size:15px}
+.row+.row{border-top:1px dashed var(--line)}
+.row span{flex:1}
+.row strong{font-variant-numeric:tabular-nums;color:var(--blue);font-weight:800;font-size:16px}
+.empty{padding:32px;background:#fff;border-radius:16px;color:var(--muted);text-align:center}
+.price-note{margin-top:32px;display:flex;gap:14px;align-items:flex-start;padding:20px 24px;background:#fff;border:1px solid var(--line);border-radius:16px;font-size:15px;color:var(--muted)}
+.price-note i{width:36px;height:36px;border-radius:10px;background:var(--rose-l);color:var(--rose);display:grid;place-items:center;flex-shrink:0}
+.price-note .ic{width:18px;height:18px}
+
+/* band */
+.band{padding:0 0 84px;background:var(--mist)}
+.band-card{position:relative;overflow:hidden;display:grid;grid-template-columns:1.1fr .9fr;align-items:stretch;background:linear-gradient(120deg,var(--navy),#22308c);border-radius:28px;color:#c9d0f2}
+.band-copy{padding:64px 56px}
+.band h2{color:#fff;margin-bottom:16px}
+.band p{font-size:17.5px;max-width:30em;margin-bottom:30px}
+.band .hero-actions{gap:12px}
+.band-img{position:relative;min-height:320px}
+.band-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;background:#2a357f}
+.band-img::before{content:'';position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,#1d2a85 0%,rgba(29,42,133,0) 40%)}
+
+/* steps */
+.step-list{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;counter-reset:s}
+.step-list li{position:relative;background:#fff;border:1px solid var(--line);border-radius:20px;padding:30px 26px 28px}
+.step-list li::before{counter-increment:s;content:counter(s);position:absolute;top:22px;right:24px;font-size:44px;font-weight:800;line-height:1;color:var(--sky)}
+.step-list i{width:56px;height:56px;border-radius:16px;background:var(--navy);color:#fff;display:grid;place-items:center;margin-bottom:22px}
+.step-list li:nth-child(2n) i{background:var(--rose)}
+.step-list .ic{width:26px;height:26px}
+.step-list h3{margin-bottom:8px}
+.step-list p{font-size:15px;color:var(--muted)}
+
+/* appointment */
+.appointment{padding:0 0 84px}
+.appt-card{display:grid;grid-template-columns:.9fr 1.1fr;border-radius:28px;overflow:hidden;box-shadow:0 40px 80px -40px rgba(14,23,85,.45);border:1px solid var(--line)}
+.appt-info{background:linear-gradient(160deg,var(--navy),#22308c);color:#c9d0f2;padding:56px 48px;display:flex;flex-direction:column}
+.appt-info h2{color:#fff;margin-bottom:16px}
+.appt-info>p{font-size:16.5px}
+.appt-contact{margin:32px 0;display:grid;gap:12px}
+.appt-contact a{display:flex;align-items:center;gap:14px;padding:14px 16px;border-radius:14px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);text-decoration:none;color:#fff;font-weight:600;transition:background .15s}
+.appt-contact a:hover{background:rgba(255,255,255,.14)}
+.appt-contact i{width:40px;height:40px;border-radius:11px;background:var(--rose);display:grid;place-items:center;flex-shrink:0}
+.appt-contact .ic{width:19px;height:19px}
+.appt-contact small{display:block;font-size:12.5px;color:#aab3e3;font-weight:500}
+.appt-note{margin-top:auto;padding-top:22px;border-top:1px solid rgba(255,255,255,.14);font-size:14px}
+.appt-note strong{color:#fff;display:block;margin-bottom:4px}
+.appointment-form{background:#fff;padding:56px 48px;display:flex;flex-direction:column;justify-content:center}
+.appointment-form h3{font-size:24px;margin-bottom:6px}
+.appointment-form>p{color:var(--muted);font-size:15px;margin-bottom:28px}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.field label{display:block;font-size:14px;font-weight:700;color:var(--navy);margin-bottom:8px}
+.field input{display:block;width:100%;height:52px;padding:0 16px;border:1.5px solid var(--line);border-radius:12px;background:var(--mist);font-size:16px;transition:border-color .15s,background .15s}
+.field input:focus{outline:none;border-color:var(--blue);background:#fff;box-shadow:0 0 0 4px rgba(69,89,179,.14)}
+.form-actions{margin-top:28px}
+.form-actions .btn{width:100%;padding:17px 26px;font-size:16px}
+.form-message{font-size:14px;margin-top:14px}
+.form-message.warning,.form-message.success{padding:12px 16px;border-radius:12px}
+.form-message.warning{background:#fff4dc;color:#6b4c10}.form-message.success{background:#e5f5ec;color:#1f5c3f}
+.form-fine{margin-top:16px;font-size:13px;color:var(--muted);text-align:center}
+
+/* faq */
+.faq{background:var(--mist)}
+.faq-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:72px;align-items:start}
+.faq-side .btn{margin-top:28px}
+.faq-items{display:grid;gap:12px}
+.faq-items details{background:#fff;border:1px solid var(--line);border-radius:16px;transition:box-shadow .15s}
+.faq-items details[open]{box-shadow:0 14px 30px -22px rgba(14,23,85,.4)}
+.faq-items summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:20px 24px;font-weight:700;color:var(--navy);font-size:16.5px}
+.faq-items summary::-webkit-details-marker{display:none}
+.faq-items summary i{width:32px;height:32px;border-radius:50%;background:var(--sky);color:var(--blue);display:grid;place-items:center;flex-shrink:0;transition:transform .2s,background .2s,color .2s}
+.faq-items summary .ic{width:16px;height:16px}
+.faq-items details[open] summary i{transform:rotate(45deg);background:var(--rose);color:#fff}
+.faq-items details p{padding:0 24px 22px;color:var(--muted);font-size:15.5px}
+
+/* disclaimer + footer */
+.disclaimer{padding:44px 0;background:#fff}
+.disclaimer .wrap{border-left:3px solid var(--rose);padding-left:24px}
+.disclaimer h2{font-size:16px;letter-spacing:0;margin-bottom:10px;font-weight:800}
+.disclaimer p{font-size:13px;line-height:1.75;color:var(--muted);margin-bottom:10px}
+footer{background:var(--navy);color:#aab3e3;padding:72px 0 28px;font-size:15px}
+.footer-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1.3fr;gap:40px}
+footer .brand strong{color:#fff}footer .brand small{color:#aab3e3}
+footer .footer-about{margin-top:18px;max-width:22em}
+.footer-col{display:flex;flex-direction:column;gap:11px}
+.footer-col strong{color:#fff;margin-bottom:6px;font-size:16px}
+.footer-col a,.footer-col span{text-decoration:none;color:#aab3e3;display:flex;align-items:center;gap:10px}
+.footer-col a:hover{color:#fff}
+.footer-col .ic{color:var(--rose)}
+.footer-bottom{margin-top:56px;padding-top:24px;border-top:1px solid rgba(255,255,255,.12);font-size:13.5px}
+
+/* motion */
+@media (prefers-reduced-motion:no-preference){.hero-copy>*,.hero-media{animation:rise .8s cubic-bezier(.2,.7,.2,1) both}.hero-copy>*:nth-child(2){animation-delay:.07s}.hero-copy>*:nth-child(3){animation-delay:.14s}.hero-copy>*:nth-child(4){animation-delay:.21s}.hero-copy>*:nth-child(5){animation-delay:.28s}.hero-media{animation-delay:.2s}@keyframes rise{from{opacity:0;transform:translateY(16px)}}}
+
+/* grid safety */
+.hero-grid>*,.about-grid>*,.faq-grid>*,.appt-card>*,.band-card>*,.footer-grid>*{min-width:0}
+
+@media (max-width:1040px){
+.nav nav{gap:22px}.hero-grid,.about-grid{gap:44px}
+.step-list{grid-template-columns:1fr 1fr}
+.footer-grid{grid-template-columns:1fr 1fr}
+.float-b{right:0}}
+@media (max-width:860px){
+.wrap{width:min(1180px,100% - 32px)}
+.topbar .tb span{display:none}.topbar .wrap{justify-content:center}.topbar .wrap>span{display:none}
+.menu-btn{display:block}
+.nav nav{display:none;position:absolute;top:100%;left:0;right:0;background:#fff;border-bottom:1px solid var(--line);flex-direction:column;align-items:stretch;gap:0;padding:8px 16px 18px;box-shadow:0 20px 30px -20px rgba(14,23,85,.3)}
+.nav nav.open{display:flex}.nav nav a{padding:12px 4px}.nav nav a.btn{margin-top:8px}
+.hero{padding:56px 0 130px}
+.hero-grid,.about-grid,.faq-grid,.appt-card,.band-card{grid-template-columns:minmax(0,1fr)}
+.hero-media{padding:0;max-width:520px}.hero-media img{aspect-ratio:4/3.3}.hero-media::before{display:none}
+.float-a{left:12px;bottom:16px}.float-b{right:12px;top:16px}
+.facts ul{grid-template-columns:1fr}.facts li+li{border-left:0;border-top:1px solid var(--line)}.facts li{padding:22px 24px}
+.section{padding:64px 0}.band,.appointment{padding-bottom:64px}
+.collage{padding:0 40px 40px 0;max-width:560px}.badge{bottom:60px}
+.service-list{columns:1}
+.search{flex-basis:100%}
+.band-copy{padding:44px 28px}.band-img{min-height:240px}.band-img::before{background:linear-gradient(180deg,#1d2a85 0%,rgba(29,42,133,0) 40%)}
+.appt-info,.appointment-form{padding:40px 28px}
+.faq-grid{gap:36px}}
+@media (max-width:520px){.form-grid,.step-list{grid-template-columns:1fr}.hero-actions .btn,.band .btn{width:100%}.footer-grid{grid-template-columns:1fr}.float{padding:10px 12px}.float i{width:36px;height:36px}.float-b{display:none}.cat figure{height:160px}}
+
+/* phone tuning */
+@media (max-width:600px){
+body{font-size:15.5px}
+.wrap{width:min(1180px,100% - 28px)}
+h1{font-size:31px;line-height:1.14}h2{font-size:25px;line-height:1.2}h3{font-size:17px}
+.sub,.hero .sub{font-size:15.5px}
+.section{padding:52px 0}.band,.appointment{padding-bottom:52px}
+.head{margin-bottom:26px}
+.btn{padding:13px 20px;font-size:15px}
+.topbar{font-size:13px}.topbar .wrap{padding:7px 0}
+.nav{min-height:64px}.brand-mark{width:38px;height:38px;border-radius:11px}.brand-mark .ic{width:18px;height:18px}.brand strong{font-size:17px}.brand small{font-size:12px}
+.menu-btn{padding:8px}.menu-btn .ic{width:20px;height:20px}
+.hero{padding:34px 0 96px}.hero .sub{margin:14px 0 22px}
+.hero-actions{gap:10px}
+.checks{margin-top:22px;gap:8px 18px;font-size:13.5px}.checks i{width:19px;height:19px}
+.hero-grid{gap:26px}.hero-media img{border-radius:20px;border-width:4px;aspect-ratio:16/11}.collage{padding:0}.collage .small{display:none}.badge{bottom:14px!important}
+.float-a{left:10px;bottom:10px}.float strong{font-size:13.5px}.float span{font-size:12px}
+.facts{margin-top:-74px}.facts ul{border-radius:18px}.facts li{padding:16px 18px;gap:14px}
+.facts i{width:42px;height:42px;border-radius:12px}.facts .ic{width:20px;height:20px}
+.facts strong{font-size:15px}.facts span{font-size:13.5px}
+.about-grid{gap:30px}.collage{padding:0 26px 26px 0}.collage img{border-radius:16px}.collage .small{border-width:5px;border-radius:14px;width:44%}
+.badge{left:12px;bottom:40px;padding:10px 14px;border-radius:12px}.badge strong{font-size:22px}.badge span{font-size:12px}
+.specs{grid-template-columns:1fr 1fr;gap:8px;margin:18px 0 24px}.specs li{padding:9px 10px;gap:8px;font-size:13px;border-radius:10px}.specs i{width:26px;height:26px;border-radius:7px}.specs .ic{width:14px;height:14px}
+.about .btn{width:100%}
+.toolbar{gap:12px;margin-bottom:18px}
+.filters{flex-wrap:nowrap;overflow-x:auto;margin:0 -14px;padding:2px 14px 6px;scrollbar-width:none;-webkit-overflow-scrolling:touch}.filters::-webkit-scrollbar{display:none}
+.category{flex:0 0 auto;padding:8px 13px;font-size:13px}
+.search input{padding:10px 14px 10px 40px;font-size:15px}
+.cat{margin-bottom:18px;border-radius:16px}.cat figure{height:130px}
+.cat figcaption{left:16px;right:16px;bottom:12px}.cat figcaption h3{font-size:17px;gap:8px}.cat figcaption h3 i{width:28px;height:28px;border-radius:8px}.cat figcaption h3 .ic{width:15px;height:15px}
+.rows{padding:4px 16px 8px}.row{font-size:14px;padding:10px 0}.row strong{font-size:14.5px}
+.price-note{margin-top:22px;padding:16px;font-size:13.5px;gap:12px}.price-note i{width:30px;height:30px}
+.band-card{border-radius:20px}.band-copy{padding:30px 22px}.band p{font-size:15.5px;margin-bottom:22px}.band-img{min-height:190px}
+.step-list{gap:12px}.step-list li{display:grid;grid-template-columns:46px 1fr;column-gap:14px;padding:18px;border-radius:16px}
+.step-list li::before{top:14px;right:16px;font-size:30px}
+.step-list i{width:46px;height:46px;border-radius:13px;margin:0;grid-row:span 2}.step-list .ic{width:22px;height:22px}
+.step-list h3{margin:2px 0 4px}.step-list p{font-size:14px}
+.appt-card{border-radius:20px}.appt-info,.appointment-form{padding:28px 20px}
+.appt-contact{margin:20px 0}.appt-contact a{padding:11px 12px;font-size:14px;word-break:break-all}.appt-contact i{width:34px;height:34px}
+.appt-note{font-size:13px}
+.appointment-form h3{font-size:20px}.appointment-form>p{margin-bottom:18px}
+.form-grid{gap:14px}.field input{height:48px;font-size:15.5px}
+.faq-grid{gap:22px}.faq-side .btn{margin-top:18px;width:100%}
+.faq-items{gap:8px}.faq-items summary{padding:15px 16px;font-size:15px}.faq-items summary i{width:28px;height:28px}.faq-items details p{padding:0 16px 16px;font-size:14px}
+.disclaimer{padding:32px 0}.disclaimer .wrap{padding-left:16px}
+footer{padding:44px 0 22px;font-size:14px}.footer-grid{grid-template-columns:1fr 1fr;gap:28px}.footer-grid>div:first-child,.footer-grid>div:last-child{grid-column:1/-1}.footer-bottom{margin-top:32px}
+}
+/* mobile menu + scroll reveal */
+@media (max-width:860px) and (prefers-reduced-motion:no-preference){
+.nav nav.open{animation:drop .25s ease-out}@keyframes drop{from{opacity:0;transform:translateY(-8px)}}
+.rv{opacity:0;transform:translateY(22px);transition:opacity .6s ease,transform .6s cubic-bezier(.2,.7,.2,1)}
+.rv.in{opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<div class="topbar"><div class="wrap">
+<span><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg>Mobile ultrasound across Georgia</span>
+<div class="tb">
+<a href="mailto:appointment@cupidimaging.online"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg><span>appointment@cupidimaging.online</span></a>
+<a href="tel:+14783125966"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>(478) 312-5966</a>
+</div></div></div>
+
+<header class="header"><div class="wrap nav">
+<a href="#home" class="brand" aria-label="Cupid Imaging home"><span class="brand-mark"><svg class="ic" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg></span><span><strong>Cupid Imaging</strong><small>Mobile Ultrasound LLC</small></span></a>
+<button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+<nav id="navLinks" aria-label="Main"><a href="#about">Why Cupid</a><a href="#services">Services &amp; Pricing</a><a href="#how">How It Works</a><a href="#faq">FAQ</a><a class="btn btn-rose" href="#appointment">Request Appointment</a></nav>
+</div></header>
+
+<main id="main">
+<section id="home" class="hero"><div class="wrap hero-grid">
+<div class="hero-copy">
+<h1>Quality ultrasound, where you feel most comfortable.</h1>
+<p class="sub">Professional mobile diagnostic ultrasound services, brought to your location. Convenient scheduling, clear self-pay pricing, and compassionate care.</p>
+<div class="hero-actions"><a class="btn btn-rose" href="#appointment">Request an Appointment</a><a class="btn btn-line" href="tel:+14783125966"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>(478) 312-5966</a></div>
+<ul class="minis checks">
+<li><i><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></i>Mobile convenience</li>
+<li><i><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></i>Transparent pricing</li>
+<li><i><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></i>Reports in 12–24 hours</li>
+</ul>
+</div>
+<figure class="hero-media">
+<img src="https://images.pexels.com/photos/7108421/pexels-photo-7108421.jpeg?auto=compress&cs=tinysrgb&w=1000" alt="Sonographer performing an ultrasound scan" width="1000" height="1050">
+<div class="float float-a"><i><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"/><path d="M15 18H9"/><path d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.624l-3.48-4.35A1 1 0 0 0 17.52 8H14"/><circle cx="17" cy="18" r="2"/><circle cx="7" cy="18" r="2"/></svg></i><div><strong>We come to you</strong><span>Mobile ultrasound appointments</span></div></div>
+<div class="float float-b"><i><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M16 13H8M16 17H8M10 9H8"/></svg></i><div><strong>12–24 hrs</strong><span>Typical report time</span></div></div>
+</figure>
+</div></section>
+
+<section class="facts" aria-label="Highlights"><div class="wrap"><ul class="minis">
+<li><i><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"/><path d="M3 10a2 2 0 0 1 .709-1.528l7-5.999a2 2 0 0 1 2.582 0l7 5.999A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg></i><div><strong>Comfort comes first</strong><span>Imaging in a convenient location, including your home</span></div></li>
+<li><i><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12.586 2.586A2 2 0 0 0 11.172 2H4a2 2 0 0 0-2 2v7.172a2 2 0 0 0 .586 1.414l8.704 8.704a2.426 2.426 0 0 0 3.42 0l6.58-6.58a2.426 2.426 0 0 0 0-3.42z"/><circle cx="7.5" cy="7.5" r="1"/></svg></i><div><strong>Clear self-pay pricing</strong><span>Know your exam cost upfront, before you book</span></div></li>
+<li><i><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg></i><div><strong>Thoughtful care</strong><span>Personal, compassionate service at every step</span></div></li>
+</ul></div></section>
+
+<section id="about" class="section about"><div class="wrap about-grid">
+<div class="collage">
+<img src="https://images.pexels.com/photos/7089040/pexels-photo-7089040.jpeg?auto=compress&cs=tinysrgb&w=1000" alt="Medical professional using ultrasound equipment" loading="lazy" width="1000" height="850">
+<img class="small" src="https://images.pexels.com/photos/7089029/pexels-photo-7089029.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Ultrasound machine ready for an examination" loading="lazy" width="600" height="600">
+<div class="badge"><strong>35</strong><span>ultrasound exams at self-pay rates</span></div>
+</div>
+<div>
+<h2>Modern imaging, made more personal.</h2>
+<p class="sub">At Cupid Imaging LLC, we believe getting a diagnostic ultrasound should be convenient and welcoming. Our mobile approach brings imaging services closer to you, without the traditional trip to an imaging center.</p>
+<p class="sub">We offer a range of examinations at straightforward self-pay rates:</p>
+<ul class="minis specs">
+<li><i><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7V5a2 2 0 0 1 2-2h2M17 3h2a2 2 0 0 1 2 2v2M21 17v2a2 2 0 0 1-2 2h-2M7 21H5a2 2 0 0 1-2-2v-2"/><circle cx="12" cy="12" r="3"/></svg></i>Abdominal &amp; pelvic</li>
+<li><i><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/><path d="M3.22 12H9.5l.5-1 2 4.5 2-7 1.5 3.5h5.27"/></svg></i>Vascular &amp; Doppler</li>
+<li><i><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="5"/><path d="M20 21a8 8 0 0 0-16 0"/></svg></i>Thyroid &amp; soft tissue</li>
+<li><i><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 16c.5.3 1.2.5 2 .5s1.5-.2 2-.5"/><path d="M15 12h.01M9 12h.01"/><path d="M19.38 6.813A9 9 0 0 1 20.8 10.2a2 2 0 0 1 0 3.6 9 9 0 0 1-17.6 0 2 2 0 0 1 0-3.6A9 9 0 0 1 12 3c2 0 3.5 1.1 3.5 2.5s-.9 2.5-2 2.5c-.8 0-1.5-.4-1.5-1"/></svg></i>Obstetric / pregnancy</li>
+<li><i><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></i>Cardiac (echo)</li>
+<li><i><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"/><path d="M15 18H9"/><path d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.624l-3.48-4.35A1 1 0 0 0 17.52 8H14"/><circle cx="17" cy="18" r="2"/><circle cx="7" cy="18" r="2"/></svg></i>Mobile, at your location</li>
+</ul>
+<a class="btn btn-blue" href="#services">See All Ultrasound Services</a>
+</div></div></section>
+
+<section id="services" class="section services"><div class="wrap">
+<div class="head center"><h2>Ultrasound care for every chapter</h2><p class="sub">Browse all 35 examinations. Prices shown are for the ultrasound exam; any applicable travel fee is additional and confirmed before scheduling.</p></div>
+<div class="toolbar">
+<div class="filters" role="group" aria-label="Filter by category">
+<button class="category active" data-filter="all" aria-pressed="true">All services<b>35</b></button>
+<button class="category" data-filter="Abdominal & Pelvic" aria-pressed="false">Abdominal &amp; Pelvic<b>10</b></button>
+<button class="category" data-filter="Vascular & Doppler" aria-pressed="false">Vascular &amp; Doppler<b>12</b></button>
+<button class="category" data-filter="Thyroid & Soft Tissue" aria-pressed="false">Thyroid &amp; Soft Tissue<b>6</b></button>
+<button class="category" data-filter="Obstetric / Pregnancy" aria-pressed="false">Pregnancy<b>6</b></button>
+<button class="category" data-filter="Cardiac" aria-pressed="false">Cardiac<b>1</b></button>
+</div>
+<label class="search"><span class="sr">Search exams</span><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg><input id="serviceSearch" type="search" placeholder="Search exams, e.g. carotid"></label>
+</div>
+<p class="sr" id="resultsCount" aria-live="polite"></p>
+<div id="serviceList" class="service-list"></div>
+<div class="price-note"><i><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg></i><p>All prices are self-pay. Travel or mileage charges may apply based on your location. Prices are confirmed before an appointment is scheduled.</p></div>
+</div></section>
+
+<section class="band"><div class="wrap"><div class="band-card">
+<div class="band-copy"><h2>Skip the commute. We'll bring the ultrasound.</h2><p>From the comfort of your home to another suitable appointment location, our mobile service is designed around your convenience.</p>
+<div class="hero-actions"><a class="btn btn-rose" href="#appointment">Request Mobile Service</a><a class="btn btn-line" href="tel:+14783125966">Call (478) 312-5966</a></div></div>
+<div class="band-img"><img src="https://images.pexels.com/photos/7108426/pexels-photo-7108426.jpeg?auto=compress&cs=tinysrgb&w=1000" alt="Hand operating portable ultrasound equipment" loading="lazy" width="1000" height="667"></div>
+</div></div></section>
+
+<section id="how" class="section steps"><div class="wrap">
+<div class="head center"><h2>How it works</h2><p class="sub">Four simple steps from choosing your exam to receiving your report.</p></div>
+<ol class="minis step-list">
+<li><i><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="8" height="4" x="8" y="2" rx="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><path d="M12 11h4M12 16h4M8 11h.01M8 16h.01"/></svg></i><h3>Choose your exam</h3><p>Explore our ultrasound services and transparent self-pay prices.</p></li>
+<li><i><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg></i><h3>Request a visit</h3><p>Tell us the exam, preferred date and location. We confirm availability and any travel charge.</p></li>
+<li><i><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 2v2M5 2v2"/><path d="M5 3H4a2 2 0 0 0-2 2v4a6 6 0 0 0 12 0V5a2 2 0 0 0-2-2h-1"/><path d="M8 15a6 6 0 0 0 12 0v-3"/><circle cx="20" cy="10" r="2"/></svg></i><h3>Get your ultrasound</h3><p>Our mobile ultrasound service comes to the agreed location for your scheduled exam.</p></li>
+<li><i><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M16 13H8M16 17H8M10 9H8"/></svg></i><h3>Receive your report</h3><p>Reports are generally available within 12–24 hours; timing can vary.</p></li>
+</ol>
+</div></section>
+
+<section class="appointment" id="appointment"><div class="wrap"><div class="appt-card">
+<div class="appt-info">
+<h2>Care is just a request away.</h2>
+<p>Share your details and we'll get in touch to confirm the exam, location, pricing and appointment availability.</p>
+<div class="appt-contact">
+<a href="tel:+14783125966"><i><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg></i><span><small>Call us (Georgia)</small>(478) 312-5966</span></a>
+<a href="mailto:appointment@cupidimaging.online"><i><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg></i><span><small>Email us</small>appointment@cupidimaging.online</span></a>
+</div>
+<div class="appt-note"><strong>Before you book</strong>We currently accept self-pay only and do not bill insurance. Any travel fee is quoted separately. Requests are not confirmed bookings.</div>
+</div>
+<form id="appointmentForm" class="appointment-form" novalidate>
+<h3>Your details</h3>
+<p>All four fields are required.</p>
+<div class="form-grid">
+<div class="field"><label for="fName">Full name</label><input id="fName" name="name" required autocomplete="name" placeholder="Your full name"></div>
+<div class="field"><label for="fEmail">Email</label><input id="fEmail" name="email" type="email" required autocomplete="email" placeholder="you@example.com"></div>
+<div class="field"><label for="fPhone">Phone number</label><input id="fPhone" name="phone" type="tel" required autocomplete="tel" placeholder="(555) 000-0000"></div>
+<div class="field"><label for="fLoc">City or ZIP code</label><input id="fLoc" name="location" required autocomplete="postal-code" placeholder="City or ZIP"></div>
+</div>
+<div class="form-actions"><button type="submit" class="btn btn-rose">Send Appointment Request</button></div>
+<div class="form-message" id="formMessage" role="status" aria-live="polite"></div>
+<p class="form-fine">Opens your email app with your request addressed to appointment@cupidimaging.online.</p>
+</form>
+</div></div></section>
+
+<section class="section faq" id="faq"><div class="wrap faq-grid">
+<div class="faq-side"><h2>Good to know</h2><p class="sub" style="margin-top:14px">Helpful details about our mobile ultrasound services. Have another question? Give us a call.</p><a class="btn btn-blue" href="tel:+14783125966">Call (478) 312-5966</a></div>
+<div class="faq-items">
+<details><summary>Do you accept insurance?<i><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></i></summary><p>Not at this time. Cupid Imaging LLC currently offers self-pay ultrasound examinations.</p></details>
+<details><summary>Is there a travel fee?<i><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></i></summary><p>Additional travel or mileage fees may apply depending on the location. We confirm any applicable travel charge before scheduling.</p></details>
+<details><summary>How quickly will I receive my report?<i><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></i></summary><p>Reports are generally available within 12–24 hours, although turnaround times may vary.</p></details>
+<details><summary>Does an appointment request guarantee an appointment?<i><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></i></summary><p>No. Appointment requests are subject to availability, clinical appropriateness and location suitability. Your appointment is confirmed separately.</p></details>
+<details><summary>Can ultrasound replace a doctor visit?<i><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></i></summary><p>No. Ultrasound is a diagnostic procedure and does not replace medical evaluation, diagnosis or treatment by a licensed healthcare provider.</p></details>
+</div></div></section>
+
+<section class="disclaimer"><div class="wrap">
+<h2>Medical Disclaimer</h2>
+<p>Cupid Imaging LLC provides mobile diagnostic ultrasound imaging services. Ultrasound examinations are diagnostic procedures and are not a substitute for a medical consultation, diagnosis, or treatment by a licensed healthcare provider. Examinations are subject to clinical appropriateness, equipment availability, service location, and applicable professional requirements. Ultrasound findings must be interpreted by an appropriately qualified medical professional. Patients should consult their healthcare provider regarding results and recommendations.</p>
+<p>Cupid Imaging LLC does not provide emergency medical services. If you are experiencing a medical emergency, call 911 or visit the nearest emergency department. We currently accept self-pay and do not bill insurance. Examination prices and applicable travel fees will be confirmed before the appointment. Reports are generally available within 12–24 hours, although turnaround times may vary. Submitting an appointment request does not guarantee an appointment or confirm a medical diagnosis.</p>
+</div></section>
+</main>
+
+<footer><div class="wrap">
+<div class="footer-grid">
+<div><a href="#home" class="brand"><span class="brand-mark"><svg class="ic" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg></span><span><strong>Cupid Imaging</strong><small>Mobile Ultrasound LLC</small></span></a><p class="footer-about">Compassionate ultrasound care, wherever life takes you.</p></div>
+<div class="footer-col"><strong>Explore</strong><a href="#about">About us</a><a href="#services">Services &amp; pricing</a><a href="#how">How it works</a></div>
+<div class="footer-col"><strong>Helpful links</strong><a href="#appointment">Appointment request</a><a href="#faq">Frequently asked questions</a><a href="#main">Back to top</a></div>
+<div class="footer-col"><strong>Contact</strong>
+<a href="tel:+14783125966"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>(478) 312-5966</a>
+<a href="mailto:appointment@cupidimaging.online"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>appointment@cupidimaging.online</a>
+<span><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg>Serving Georgia</span>
+</div>
+</div>
+<div class="footer-bottom">© <span id="year"></span> Cupid Imaging LLC. All rights reserved.</div>
+</div></footer>
+
+<script>
+// Contact destination and prices. Edit here.
+const SITE_SETTINGS = { contactEmail: "appointment@cupidimaging.online" };
+const SERVICES = [
+["Abdominal & Pelvic","Complete Abdominal Ultrasound",300],
+["Abdominal & Pelvic","Limited Abdominal Ultrasound",250],
+["Abdominal & Pelvic","Complete Renal / Kidney Ultrasound",200],
+["Abdominal & Pelvic","Limited Renal / Kidney Ultrasound",100],
+["Abdominal & Pelvic","Bladder Ultrasound",100],
+["Abdominal & Pelvic","Complete Pelvic Ultrasound (Transabdominal)",300],
+["Abdominal & Pelvic","Limited Pelvic Ultrasound (Transabdominal)",200],
+["Abdominal & Pelvic","Abdominal Aortic Aneurysm (AAA) Screening",150],
+["Abdominal & Pelvic","Complete Abdominal Organ Arterial & Venous Duplex",200],
+["Abdominal & Pelvic","Scrotal / Testicular Ultrasound",300],
+["Vascular & Doppler","Bilateral Lower Extremity Venous Doppler",300],
+["Vascular & Doppler","Unilateral Lower Extremity Venous Doppler",200],
+["Vascular & Doppler","Bilateral Upper Extremity Venous Doppler",300],
+["Vascular & Doppler","Unilateral Upper Extremity Venous Doppler",200],
+["Vascular & Doppler","Bilateral Lower Extremity Arterial Doppler",300],
+["Vascular & Doppler","Unilateral Lower Extremity Arterial Doppler",200],
+["Vascular & Doppler","Bilateral Upper Extremity Arterial Doppler",300],
+["Vascular & Doppler","Unilateral Upper Extremity Arterial Doppler",200],
+["Vascular & Doppler","Complete Carotid Artery Doppler",350],
+["Vascular & Doppler","Carotid Intima-Media Thickness (CIMT)",150],
+["Vascular & Doppler","Limited Ankle-Brachial Index (ABI)",75],
+["Vascular & Doppler","Venous Reflux Ultrasound",300],
+["Thyroid & Soft Tissue","Thyroid Ultrasound",250],
+["Thyroid & Soft Tissue","Head & Neck Soft Tissue Ultrasound",150],
+["Thyroid & Soft Tissue","Chest Wall Soft Tissue Ultrasound",150],
+["Thyroid & Soft Tissue","Groin Soft Tissue Ultrasound",150],
+["Thyroid & Soft Tissue","Upper Extremity Soft Tissue Ultrasound",150],
+["Thyroid & Soft Tissue","Lower Extremity Soft Tissue Ultrasound",150],
+["Obstetric / Pregnancy","Complete Obstetric Ultrasound",350],
+["Obstetric / Pregnancy","Limited Obstetric Ultrasound",200],
+["Obstetric / Pregnancy","Follow-Up Obstetric Ultrasound",250],
+["Obstetric / Pregnancy","Fetal Biophysical Profile (BPP)",350],
+["Obstetric / Pregnancy","Detailed Fetal Anatomical Survey",300],
+["Obstetric / Pregnancy","Additional Fetus Detailed Anatomy Ultrasound",350],
+["Cardiac","Complete Thoracic Echocardiogram",500]
+];
+const S='<svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">';
+const CATS={
+"Abdominal & Pelvic":{img:"7108420",alt:"Sonographer performing an abdominal ultrasound",icon:S+'<path d="M3 7V5a2 2 0 0 1 2-2h2M17 3h2a2 2 0 0 1 2 2v2M21 17v2a2 2 0 0 1-2 2h-2M7 21H5a2 2 0 0 1-2-2v-2"/><circle cx="12" cy="12" r="3"/></svg>'},
+"Vascular & Doppler":{img:"7108427",alt:"Clinician reviewing an ultrasound image on a monitor",icon:S+'<path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/><path d="M3.22 12H9.5l.5-1 2 4.5 2-7 1.5 3.5h5.27"/></svg>'},
+"Thyroid & Soft Tissue":{img:"11352535",alt:"Person touching the front of the neck near the thyroid",icon:S+'<circle cx="12" cy="8" r="5"/><path d="M20 21a8 8 0 0 0-16 0"/></svg>'},
+"Obstetric / Pregnancy":{img:"7089045",alt:"Prenatal ultrasound scan in a clinic",icon:S+'<path d="M10 16c.5.3 1.2.5 2 .5s1.5-.2 2-.5"/><path d="M15 12h.01M9 12h.01"/><path d="M19.38 6.813A9 9 0 0 1 20.8 10.2a2 2 0 0 1 0 3.6 9 9 0 0 1-17.6 0 2 2 0 0 1 0-3.6A9 9 0 0 1 12 3c2 0 3.5 1.1 3.5 2.5s-.9 2.5-2 2.5c-.8 0-1.5-.4-1.5-1"/></svg>'},
+"Cardiac":{img:"8460231",alt:"Ultrasound screen showing a cardiac scan",icon:S+'<path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>'}
+};
+const photo=id=>`https://images.pexels.com/photos/${id}/pexels-photo-${id}.jpeg?auto=compress&cs=tinysrgb&w=800`;
+const list=document.getElementById('serviceList'),search=document.getElementById('serviceSearch'),buttons=[...document.querySelectorAll('[data-filter]')];let active='all';
+function render(){
+  const q=search.value.trim().toLowerCase();
+  const filtered=SERVICES.filter(s=>(active==='all'||s[0]===active)&&s[1].toLowerCase().includes(q));
+  list.innerHTML='';
+  [...new Set(filtered.map(s=>s[0]))].forEach(g=>{
+    const c=CATS[g],items=filtered.filter(s=>s[0]===g);
+    const art=document.createElement('article');art.className='cat';
+    const fig=document.createElement('figure');
+    const img=document.createElement('img');img.src=photo(c.img);img.alt=c.alt;img.loading='lazy';
+    const cap=document.createElement('figcaption');
+    const h=document.createElement('h3');const ib=document.createElement('i');ib.innerHTML=c.icon;h.append(ib,g);
+    const n=document.createElement('span');n.textContent=`${items.length} exam${items.length===1?'':'s'}`;
+    cap.append(h,n);fig.append(img,cap);
+    const rows=document.createElement('div');rows.className='rows';
+    items.forEach(s=>{const r=document.createElement('div');r.className='row';const a=document.createElement('span');a.textContent=s[1];const b=document.createElement('strong');b.textContent=`$${s[2]}`;r.append(a,b);rows.append(r)});
+    art.append(fig,rows);list.append(art);
+  });
+  if(!filtered.length){const e=document.createElement('p');e.className='empty';e.textContent='No exams match that search. Try another word, or call (478) 312-5966.';list.append(e)}
+  document.getElementById('resultsCount').textContent=`Showing ${filtered.length} exam${filtered.length===1?'':'s'}`;
+}
+buttons.forEach(b=>b.addEventListener('click',()=>{active=b.dataset.filter;buttons.forEach(x=>{x.classList.toggle('active',x===b);x.setAttribute('aria-pressed',String(x===b))});render()}));
+search.addEventListener('input',render);render();
+
+document.getElementById('appointmentForm').addEventListener('submit',e=>{
+  e.preventDefault();const form=e.currentTarget,status=document.getElementById('formMessage');
+  if(!form.checkValidity()){const bad=form.querySelector(':invalid');status.textContent=`Please fill in a valid ${bad.previousElementSibling.textContent.toLowerCase()}.`;status.className='form-message warning';bad.focus();return}
+  const f=new FormData(form);
+  const msg=`Appointment request: Cupid Imaging LLC\n\nName: ${f.get('name')}\nEmail: ${f.get('email')}\nPhone: ${f.get('phone')}\nCity / ZIP: ${f.get('location')}`;
+  window.location.href=`mailto:${SITE_SETTINGS.contactEmail}?subject=${encodeURIComponent('Mobile ultrasound appointment request')}&body=${encodeURIComponent(msg)}`;
+  status.textContent='Your email app should open with the request. Send that email to submit it, and we will be in touch to confirm.';status.className='form-message success';
+});
+
+document.getElementById('year').textContent=new Date().getFullYear();
+const menuBtn=document.getElementById('menuBtn'),nav=document.getElementById('navLinks');
+const IC_MENU='<svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg>',IC_X='<svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg>';
+function setMenu(open){nav.classList.toggle('open',open);menuBtn.setAttribute('aria-expanded',String(open));menuBtn.setAttribute('aria-label',open?'Close menu':'Open menu');menuBtn.innerHTML=open?IC_X:IC_MENU}
+menuBtn.addEventListener('click',()=>setMenu(!nav.classList.contains('open')));
+nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>setMenu(false)));
+
+// Scroll reveal on mobile
+(function(){
+  if(!matchMedia('(max-width:860px)').matches||matchMedia('(prefers-reduced-motion:reduce)').matches||!('IntersectionObserver' in window))return;
+  const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12,rootMargin:'0px 0px -6% 0px'});
+  const sel='.facts li,.collage,.about-grid>div:last-child,.head,.toolbar,.cat,.price-note,.band-card,.step-list li,.appt-info,.appointment-form,.faq-side,.faq-items details';
+  const watch=()=>document.querySelectorAll(sel).forEach(el=>{if(el.classList.contains('rv'))return;el.classList.add('rv');const sib=[...el.parentElement.children].indexOf(el);el.style.transitionDelay=Math.min(sib,4)*70+'ms';io.observe(el)});
+  watch();new MutationObserver(watch).observe(document.getElementById('serviceList'),{childList:true});
+})();
+</script>
+</body>
+</html>
