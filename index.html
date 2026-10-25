@@ -146,7 +146,7 @@ main>section{scroll-margin-top:78px}
 .tl-card.visit h3 i{background:var(--rose)}
 .tl-card h3 .ic{width:21px;height:21px}
 .tl{position:relative;display:grid;gap:20px;counter-reset:t}
-.tl::before{content:'';position:absolute;left:17px;top:12px;bottom:12px;width:2px;background:var(--line)}
+.tl li:not(:last-child)::after{content:'';position:absolute;left:17px;top:40px;bottom:-16px;width:2px;background:var(--line)}
 .tl li{position:relative;display:flex;gap:16px}
 .tl li::before{counter-increment:t;content:counter(t);position:relative;z-index:1;width:36px;height:36px;border-radius:50%;background:#fff;border:2px solid var(--plum);color:var(--mag);font-weight:800;font-size:14px;display:grid;place-items:center;flex-shrink:0}
 .tl h4{font-size:16.5px;margin:5px 0 3px}
@@ -367,7 +367,7 @@ main>section{scroll-margin-top:66px}
 .expect-grid.tabbed .tl-card[hidden]{display:none}
 .tl-card{padding:18px 16px;border-radius:18px}
 .tl-card h3{display:none}
-.tl{gap:16px}.tl::before{left:15px}
+.tl{gap:16px}.tl li:not(:last-child)::after{left:15px;top:36px;bottom:-12px}
 .tl li{gap:12px}.tl li::before{width:32px;height:32px;font-size:13px}
 .tl h4{font-size:15px;margin-top:4px}.tl p{font-size:13.5px}
 
@@ -444,6 +444,62 @@ main>section{scroll-margin-top:66px}
 }
 @media (min-width:601px){.faq-more{display:none}}
 @media (max-width:360px){.hl li{font-size:11.5px}.form-grid{grid-template-columns:1fr}.field{grid-column:1/-1}.book-opts strong{font-size:12px}}
+
+/* ===== v14: clickable vs informational ===== */
+.go{width:18px;height:18px;color:var(--plum);margin-left:auto;flex-shrink:0;transition:transform .2s}
+a:hover>.go{transform:translateX(3px)}
+.book-opts a{box-shadow:0 10px 24px -18px rgba(35,5,67,.45)}
+.book-opts a>span{min-width:0}
+.book-opts small .m{display:none}
+.mail-row>.go{color:var(--rose)}
+.f-contact .go{color:#bfa6d0;width:16px;height:16px}
+.f-area{display:flex;align-items:center;gap:8px;margin:0;padding:0;background:none;border:0;font-size:14px;color:#cdb8dc}
+/* informational: flat, not button-like */
+.keyfacts{gap:22px 28px}
+.keyfacts li{padding:0;background:none;border:0;border-radius:0}
+.keyfacts i{background:var(--pink-l)}
+.rep-tiles{gap:0}
+.rep-tiles li{background:none;border:0;border-radius:0;padding:4px 18px}
+.rep-tiles li:first-child{padding-left:0}
+.rep-tiles li+li{border-left:1px solid var(--line)}
+.rep-tiles i{background:var(--pink-l)}
+.rep-tiles .hot{background:none}
+.rep-tiles .hot i{background:var(--rose);color:#fff}
+.rep-tiles .hot strong{color:var(--rose)}.rep-tiles .hot span{color:var(--muted)}
+.mail-row{margin-top:22px}
+@media (max-width:600px){
+.hl{display:flex;flex-wrap:wrap;gap:10px 16px;margin-top:18px}
+.hl li{flex-direction:row;align-items:center;gap:8px;padding:0;background:none;border:0;border-radius:0;font-size:13px}
+.hl i{width:28px;height:28px;border-radius:8px}
+.keyfacts{gap:16px 14px;margin-top:20px}
+.keyfacts li{flex-direction:row;gap:10px;padding:0}
+.keyfacts i{width:32px;height:32px}
+.cat figure{height:232px}
+.book-opts{grid-template-columns:repeat(3,1fr);gap:8px}
+.book-opts a{position:relative;flex-direction:column;align-items:flex-start;text-align:left;gap:8px;padding:14px 12px 12px;border-radius:16px;border:1.5px solid var(--line);background:#fff;box-shadow:0 10px 22px -16px rgba(35,5,67,.5)}
+.book-opts a:active{transform:scale(.97);border-color:var(--plum)}
+.book-opts i{width:36px;height:36px;border-radius:11px;background:var(--rose);color:#fff}
+.book-opts .ic{width:17px;height:17px}
+.book-opts small{display:block;font-size:11.5px;line-height:1.35;color:var(--muted)}
+.book-opts small .d{display:none}.book-opts small .m{display:inline}
+.book-opts strong{font-size:14px}
+.book-opts .go{position:absolute;top:14px;right:10px;width:15px;height:15px;margin:0}
+.rep-tiles li{padding:2px 8px}
+.rep-tiles li:first-child{padding-left:0}
+.rep-tiles i{width:30px;height:30px}
+.mail-row{margin-top:16px}
+/* footer: contact first */
+.f-col{order:-1}
+.f-top{display:flex;flex-direction:column;gap:28px}
+.f-about{padding-top:24px;border-top:1px solid rgba(255,255,255,.1)}
+.f-area{justify-content:center;font-size:13px}
+}
+
+.rep-tiles .hot{border-color:var(--line)}
+.hero-tag{background:rgba(27,16,52,.62);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.18);box-shadow:none;color:#fff;left:20px;bottom:20px}
+.hero-tag i{background:none;width:auto;height:auto;color:#ff8cc4}
+.hero-tag strong{color:#fff}.hero-tag span{color:#e2cfee}
+@media (max-width:600px){.hero-tag{left:16px;bottom:14px;padding:7px 12px;gap:8px}.hero-tag i{width:auto;height:auto}}
 </style>
 </head>
 <body>
@@ -508,7 +564,7 @@ main>section{scroll-margin-top:66px}
 </div></section>
 
 <section id="about" class="section about"><div class="wrap about-grid">
-<div class="about-img rv"><img src="https://images.pexels.com/photos/7108418/pexels-photo-7108418.jpeg?auto=compress&cs=tinysrgb&w=1000" alt="Sonographer smiling beside the ultrasound machine during a scan" loading="lazy" width="1000" height="880"></div>
+<div class="about-img rv"><img src="https://images.pexels.com/photos/7089339/pexels-photo-7089339.jpeg?auto=compress&cs=tinysrgb&w=1000" alt="Doctor using an ultrasound scanner in a modern clinic" loading="lazy" width="1000" height="880"></div>
 <div class="rv">
 <h2>Mission Statement</h2>
 <p class="lead">Convenient, professional ultrasound delivered to your location, with flexible booking, transparent pricing and compassionate care.</p>
@@ -542,9 +598,9 @@ main>section{scroll-margin-top:66px}
 <section id="how" class="section"><div class="wrap">
 <div class="head"><h2>What to expect</h2><p class="sub">Simple booking and a clear, comfortable visit.</p></div>
 <div class="book-opts rv">
-<a href="tel:+14783125966"><i><svg class="ic"><use href="#i-phone"/></svg></i><span><strong>Phone</strong><small>(478) 312-5966</small></span></a>
-<a href="mailto:appointment@cupidimaging.online"><i><svg class="ic"><use href="#i-mail"/></svg></i><span><strong>Email</strong><small>appointment@cupidimaging.online</small></span></a>
-<a href="#appointment"><i><svg class="ic"><use href="#i-globe"/></svg></i><span><strong>Website</strong><small>Request online</small></span></a>
+<a href="tel:+14783125966"><i><svg class="ic"><use href="#i-phone"/></svg></i><span><strong>Phone</strong><small>(478) 312-5966</small></span><svg class="ic go"><use href="#i-arrow"/></svg></a>
+<a href="mailto:appointment@cupidimaging.online"><i><svg class="ic"><use href="#i-mail"/></svg></i><span><strong>Email</strong><small><span class="d">appointment@cupidimaging.online</span><span class="m">Send a request</span></small></span><svg class="ic go"><use href="#i-arrow"/></svg></a>
+<a href="#appointment"><i><svg class="ic"><use href="#i-globe"/></svg></i><span><strong>Website</strong><small>Request online</small></span><svg class="ic go"><use href="#i-arrow"/></svg></a>
 </div>
 <div class="tabs" role="tablist" aria-label="What to expect">
 <button role="tab" id="tab-book" aria-controls="panel-book" aria-selected="true">Booking</button>
@@ -580,7 +636,7 @@ main>section{scroll-margin-top:66px}
 <li class="hot"><i><svg class="ic"><use href="#i-alarm"/></svg></i><strong>Same day</strong><span>Emergency reports</span></li>
 <li><i><svg class="ic"><use href="#i-zap"/></svg></i><strong>Instant</strong><span>At an additional cost</span></li>
 </ul>
-<a class="mail-row" href="mailto:results@cupidimaging.online"><i><svg class="ic"><use href="#i-mail"/></svg></i><span><small>Results are emailed from</small>results@cupidimaging.online</span></a>
+<a class="mail-row" href="mailto:results@cupidimaging.online"><i><svg class="ic"><use href="#i-mail"/></svg></i><span><small>Results are emailed from</small>results@cupidimaging.online</span><svg class="ic go"><use href="#i-arrow"/></svg></a>
 </div>
 <div class="card price-card rv">
 <h3 class="card-title">Pricing and benefits</h3>
@@ -652,14 +708,14 @@ main>section{scroll-margin-top:66px}
 <div class="f-about">
 <a href="#home" class="brand"><span class="brand-mark"><svg class="ic fill"><use href="#i-heart"/></svg></span><strong>Cupid Imaging LLC</strong></a>
 <p>Compassionate mobile ultrasound care, wherever life takes you.</p>
-<span class="f-area"><svg class="ic"><use href="#i-pin"/></svg>Serving patients across Georgia</span>
+<p class="f-area"><svg class="ic"><use href="#i-pin"/></svg>Serving patients across Georgia</p>
 </div>
 <div class="f-col">
 <h3>Contact</h3>
 <div class="f-contact">
-<a href="tel:+14783125966"><i><svg class="ic"><use href="#i-phone"/></svg></i><span><small>Call</small>(478) 312-5966</span></a>
-<a href="mailto:appointment@cupidimaging.online"><i><svg class="ic"><use href="#i-cal"/></svg></i><span><small>Appointments</small>appointment@cupidimaging.online</span></a>
-<a href="mailto:results@cupidimaging.online"><i><svg class="ic"><use href="#i-file"/></svg></i><span><small>Results</small>results@cupidimaging.online</span></a>
+<a href="tel:+14783125966"><i><svg class="ic"><use href="#i-phone"/></svg></i><span><small>Call</small>(478) 312-5966</span><svg class="ic go"><use href="#i-arrow"/></svg></a>
+<a href="mailto:appointment@cupidimaging.online"><i><svg class="ic"><use href="#i-cal"/></svg></i><span><small>Appointments</small>appointment@cupidimaging.online</span><svg class="ic go"><use href="#i-arrow"/></svg></a>
+<a href="mailto:results@cupidimaging.online"><i><svg class="ic"><use href="#i-file"/></svg></i><span><small>Results</small>results@cupidimaging.online</span><svg class="ic go"><use href="#i-arrow"/></svg></a>
 </div>
 </div>
 </div>
@@ -709,11 +765,11 @@ const SERVICES = [
 ["Cardiac","Complete Thoracic Echocardiogram",500]
 ];
 const CATS={
-"Abdominal & Pelvic":{icon:"scan",img:"https://images.pexels.com/photos/5042613/pexels-photo-5042613.jpeg?auto=compress&cs=tinysrgb&w=1000",pos:"50% 45%",alt:"Sonographer performing an abdominal ultrasound on a patient"},
+"Abdominal & Pelvic":{icon:"scan",img:"https://images.pexels.com/photos/7108415/pexels-photo-7108415.jpeg?auto=compress&cs=tinysrgb&w=1000",pos:"50% 60%",alt:"Sonographer performing an abdominal ultrasound on a patient lying down"},
 "Vascular & Doppler":{icon:"pulse",img:"https://images.pexels.com/photos/13185367/pexels-photo-13185367.jpeg?auto=compress&cs=tinysrgb&w=1000",pos:"55% 55%",alt:"Ultrasound probe being used on a patient's lower leg"},
 "Thyroid & Soft Tissue":{icon:"user",img:"https://images.pexels.com/photos/3985305/pexels-photo-3985305.jpeg?auto=compress&cs=tinysrgb&w=1000",pos:"50% 30%",alt:"Medical practitioner examining a patient's neck and thyroid area"},
 "Obstetric / Pregnancy":{icon:"baby",img:"https://images.pexels.com/photos/7108414/pexels-photo-7108414.jpeg?auto=compress&cs=tinysrgb&w=1000",pos:"50% 55%",alt:"Ultrasound probe on a pregnant woman's abdomen"},
-"Cardiac":{icon:"activity",img:"https://images.unsplash.com/photo-1530026454774-50cce722a1fb?auto=format&fit=crop&w=1000&q=80",pos:"50% 50%",alt:"Anatomical model showing the chambers and valves of the heart"}
+"Cardiac":{icon:"activity",img:"https://images.pexels.com/photos/5340270/pexels-photo-5340270.jpeg?auto=compress&cs=tinysrgb&w=1000",pos:"50% 42%",alt:"Stethoscope held over a heart on the chest, representing cardiac care"}
 };
 const svg=(n)=>`<svg class="ic"><use href="#i-${n}"/></svg>`;
 const list=document.getElementById('serviceList'),search=document.getElementById('serviceSearch'),buttons=[...document.querySelectorAll('[data-filter]')];let active='all';
