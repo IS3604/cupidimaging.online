@@ -50,7 +50,7 @@
 </div></div>
 
 <header class="header"><div class="wrap nav">
-<a href="#home" class="brand" aria-label="Cupid Imaging LLC home"><span class="brand-mark"><svg class="ic fill"><use href="#i-heart"/></svg></span><strong>Cupid Imaging</strong></a>
+<a href="#home" class="brand" aria-label="Cupid Imaging LLC home"><span class="brand-mark"><svg class="ic fill"><use href="#i-heart"/></svg></span><strong>Cupid Imaging LLC</strong></a>
 <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks"><svg class="ic"><use href="#i-menu"/></svg></button>
 <nav id="navLinks" aria-label="Main"><button type="button" class="menu-close" id="menuClose" aria-label="Close menu"><svg class="ic"><use href="#i-x"/></svg></button><a href="#about">About</a><a href="#services">Services</a><a href="#how">What to Expect</a><a href="#pricing">Reports &amp; Pricing</a><a href="#faq">FAQ</a><a class="btn btn-rose" href="#appointment">Request Appointment</a></nav>
 </div></header>
@@ -63,7 +63,7 @@
 <ul class="hero-contact">
 <li><i><svg class="ic"><use href="#i-phone"/></svg></i><a href="tel:+14783125966">(478) 312-5966</a></li>
 <li><i><svg class="ic"><use href="#i-mail"/></svg></i><a href="mailto:appointment@cupidimaging.online">appointment@cupidimaging.online</a></li>
-<li><i><svg class="ic"><use href="#i-clock"/></svg></i><span>Every day, 9 AM – 7 PM</span></li>
+<li><i><svg class="ic"><use href="#i-clock"/></svg></i><span>Every day, 6 AM – 10 PM</span></li>
 </ul>
 </div>
 </figure>
@@ -83,16 +83,23 @@
 <div class="filters" role="group" aria-label="Filter by category">
 <button class="category active" data-filter="all" aria-pressed="true">All services</button>
 <button class="category" data-filter="Abdominal & Pelvic" aria-pressed="false">Abdominal &amp; Pelvic<b>10</b></button>
-<button class="category" data-filter="Vascular & Doppler" aria-pressed="false">Vascular &amp; Doppler<b>12</b></button>
+<button class="category" data-filter="Vascular Ultrasounds" aria-pressed="false">Vascular Ultrasounds<b>12</b></button>
 <button class="category" data-filter="Thyroid & Soft Tissue" aria-pressed="false">Thyroid &amp; Soft Tissue<b>6</b></button>
-<button class="category" data-filter="Obstetric / Pregnancy" aria-pressed="false">Pregnancy<b>6</b></button>
-<button class="category" data-filter="Cardiac" aria-pressed="false">Cardiac<b>1</b></button>
+<button class="category" data-filter="Obstetric / Pregnancy" aria-pressed="false">Obstetric Ultrasounds<b>6</b></button>
+<button class="category" data-filter="Echocardiogram" aria-pressed="false">Echocardiogram<b>1</b></button>
 </div>
 <label class="search"><span class="sr">Search exams</span><svg class="ic"><use href="#i-search"/></svg><input id="serviceSearch" type="search" placeholder="Search exams, e.g. carotid"></label>
 </div>
 <p class="sr" id="resultsCount" aria-live="polite"></p>
 <div id="serviceList" class="service-list"></div>
-<div class="price-note"><i><svg class="ic"><use href="#i-info"/></svg></i><p>Prices are self-pay and cover the ultrasound exam. <strong>Radiologist charges are separate.</strong> Any travel fee is confirmed before your appointment is scheduled.</p></div>
+<div class="price-note">
+<h3><i><svg class="ic"><use href="#i-info"/></svg></i>Pricing details</h3>
+<ul>
+<li><svg class="ic"><use href="#i-check"/></svg><span><strong>Any travel fee is confirmed before your appointment is scheduled.</strong></span></li>
+<li><svg class="ic"><use href="#i-check"/></svg><span><strong>Radiologist charges are separate.</strong></span></li>
+<li><svg class="ic"><use href="#i-check"/></svg><span><strong>Prices are self-pay and cover the ultrasound exam.</strong></span></li>
+</ul>
+</div>
 </div></section>
 
 <section id="how" class="section"><div class="wrap">
@@ -136,6 +143,7 @@
 <li class="hot"><i><svg class="ic"><use href="#i-alarm"/></svg></i><strong>Same day</strong><span>Emergency reports</span></li>
 <li><i><svg class="ic"><use href="#i-zap"/></svg></i><strong>Instant</strong><span>At an additional cost</span></li>
 </ul>
+<p class="mail-row"><i><svg class="ic"><use href="#i-cal"/></svg></i><span><small>Appointments are booked at</small>appointment@cupidimaging.online</span></p>
 <p class="mail-row"><i><svg class="ic"><use href="#i-mail"/></svg></i><span><small>Results are emailed from</small>results@cupidimaging.online</span></p>
 </div>
 <div class="card price-card rv">
@@ -154,17 +162,19 @@
 <img src="https://images.pexels.com/photos/16388112/pexels-photo-16388112.jpeg?auto=compress&cs=tinysrgb&w=1000" alt="Ultrasound scan of a pregnant abdomen with a compact ultrasound unit" loading="lazy">
 <h2>Skip the commute. We'll bring the ultrasound.</h2>
 <p>Send your details and we'll call to confirm your exam, time and location.</p>
-<div class="appt-note"><svg class="ic"><use href="#i-info"/></svg><span>Self-pay only; we don't bill insurance. Requests are confirmed by phone.</span></div>
+<div class="appt-note"><svg class="ic"><use href="#i-info"/></svg><span>Self-pay only; we don't bill insurance. We are working on this.</span></div>
 </div>
 <form id="appointmentForm" class="appointment-form" novalidate>
-<h3>Your details</h3>
+<h3>Book your appointment here</h3>
 <div class="form-grid">
 <div class="field"><label for="fName">Full name</label><div class="inp"><svg class="ic"><use href="#i-user"/></svg><input id="fName" name="name" required autocomplete="name" autocapitalize="words" placeholder="Your full name"><span class="ok" aria-hidden="true"><svg class="ic"><use href="#i-check"/></svg></span></div></div>
 <div class="field"><label for="fEmail">Email</label><div class="inp"><svg class="ic"><use href="#i-mail"/></svg><input id="fEmail" name="email" type="email" required autocomplete="email" inputmode="email" autocapitalize="off" placeholder="you@example.com"><span class="ok" aria-hidden="true"><svg class="ic"><use href="#i-check"/></svg></span></div></div>
 <div class="field"><label for="fPhone">Phone number</label><div class="inp"><svg class="ic"><use href="#i-phone"/></svg><input id="fPhone" name="phone" type="tel" required autocomplete="tel" inputmode="tel" placeholder="Phone"><span class="ok" aria-hidden="true"><svg class="ic"><use href="#i-check"/></svg></span></div></div>
 <div class="field"><label for="fLoc">City or ZIP code</label><div class="inp"><svg class="ic"><use href="#i-pin"/></svg><input id="fLoc" name="location" required autocomplete="postal-code" placeholder="City / ZIP"><span class="ok" aria-hidden="true"><svg class="ic"><use href="#i-check"/></svg></span></div></div>
+<div class="field field-wide"><label for="fExam">Exam</label><div class="inp"><svg class="ic"><use href="#i-scan"/></svg><select id="fExam" name="exam" required><option value="">Choose an exam</option></select><span class="ok" aria-hidden="true"><svg class="ic"><use href="#i-check"/></svg></span></div></div>
 </div>
 <div class="form-actions"><button type="submit" class="btn btn-rose">Send Appointment Request<svg class="ic"><use href="#i-arrow"/></svg></button></div>
+<div class="form-note"><i><svg class="ic"><use href="#i-phone"/></svg></i><span>Requests are confirmed by phone.</span></div>
 <div class="form-message" id="formMessage" role="status" aria-live="polite"></div>
 </form>
 </div></div></section>

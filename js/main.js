@@ -15,18 +15,18 @@ const SERVICES = [
   ['Abdominal & Pelvic', 'Abdominal Aortic Aneurysm (AAA) Screening', 150],
   ['Abdominal & Pelvic', 'Complete Abdominal Organ Arterial & Venous Duplex', 200],
   ['Abdominal & Pelvic', 'Scrotal / Testicular Ultrasound', 300],
-  ['Vascular & Doppler', 'Bilateral Lower Extremity Venous Doppler', 300],
-  ['Vascular & Doppler', 'Unilateral Lower Extremity Venous Doppler', 200],
-  ['Vascular & Doppler', 'Bilateral Upper Extremity Venous Doppler', 300],
-  ['Vascular & Doppler', 'Unilateral Upper Extremity Venous Doppler', 200],
-  ['Vascular & Doppler', 'Bilateral Lower Extremity Arterial Doppler', 300],
-  ['Vascular & Doppler', 'Unilateral Lower Extremity Arterial Doppler', 200],
-  ['Vascular & Doppler', 'Bilateral Upper Extremity Arterial Doppler', 300],
-  ['Vascular & Doppler', 'Unilateral Upper Extremity Arterial Doppler', 200],
-  ['Vascular & Doppler', 'Complete Carotid Artery Doppler', 350],
-  ['Vascular & Doppler', 'Carotid Intima-Media Thickness (CIMT)', 150],
-  ['Vascular & Doppler', 'Limited Ankle-Brachial Index (ABI)', 75],
-  ['Vascular & Doppler', 'Venous Reflux Ultrasound', 300],
+  ['Vascular Ultrasounds', 'Bilateral Lower Extremity Venous Doppler', 300],
+  ['Vascular Ultrasounds', 'Unilateral Lower Extremity Venous Doppler', 200],
+  ['Vascular Ultrasounds', 'Bilateral Upper Extremity Venous Doppler', 300],
+  ['Vascular Ultrasounds', 'Unilateral Upper Extremity Venous Doppler', 200],
+  ['Vascular Ultrasounds', 'Bilateral Lower Extremity Arterial Doppler', 300],
+  ['Vascular Ultrasounds', 'Unilateral Lower Extremity Arterial Doppler', 200],
+  ['Vascular Ultrasounds', 'Bilateral Upper Extremity Arterial Doppler', 300],
+  ['Vascular Ultrasounds', 'Unilateral Upper Extremity Arterial Doppler', 200],
+  ['Vascular Ultrasounds', 'Complete Carotid Artery Doppler', 350],
+  ['Vascular Ultrasounds', 'Carotid Intima-Media Thickness (CIMT)', 150],
+  ['Vascular Ultrasounds', 'Limited Ankle-Brachial Index (ABI)', 75],
+  ['Vascular Ultrasounds', 'Venous Reflux Ultrasound', 300],
   ['Thyroid & Soft Tissue', 'Thyroid Ultrasound', 250],
   ['Thyroid & Soft Tissue', 'Head & Neck Soft Tissue Ultrasound', 150],
   ['Thyroid & Soft Tissue', 'Chest Wall Soft Tissue Ultrasound', 150],
@@ -39,16 +39,16 @@ const SERVICES = [
   ['Obstetric / Pregnancy', 'Fetal Biophysical Profile (BPP)', 350],
   ['Obstetric / Pregnancy', 'Detailed Fetal Anatomical Survey', 300],
   ['Obstetric / Pregnancy', 'Additional Fetus Detailed Anatomy Ultrasound', 350],
-  ['Cardiac', 'Complete Thoracic Echocardiogram', 500],
+  ['Echocardiogram', 'Complete Thoracic Echocardiogram', 500],
 ];
 
 
 const CATEGORIES = {
   'Abdominal & Pelvic':    { title: 'Abdominal & Pelvic',    icon: 'scan',     img: 'images/abdominal.jpg', pos: '45% 55%', alt: "Sonographer performing an abdominal ultrasound on a patient's stomach" },
-  'Vascular & Doppler':    { title: 'Vascular & Doppler',    icon: 'pulse',    img: 'images/vascular.jpg', pos: '50% 40%', alt: "Ultrasound probe scanning a patient's carotid artery in the neck" },
+  'Vascular Ultrasounds':    { title: 'Vascular Ultrasounds',    icon: 'pulse',    img: 'images/vascular.jpg', pos: '50% 40%', alt: "Ultrasound probe scanning a patient's carotid artery in the neck" },
   'Thyroid & Soft Tissue': { title: 'Thyroid & Soft Tissue', icon: 'user',     img: 'images/thyroid.jpg', pos: '50% 72%', alt: "Sonographer performing a thyroid ultrasound on a patient's neck" },
-  'Obstetric / Pregnancy': { title: 'Pregnancy',             icon: 'baby',     img: 'images/pregnancy.jpg', pos: '50% 50%', alt: 'Sonographer performing a pregnancy ultrasound with the baby shown on screen' },
-  'Cardiac':               { title: 'Cardiac',               icon: 'activity', img: 'images/cardiac.jpg', pos: '50% 50%', alt: 'Colour Doppler echocardiogram showing blood flow through the heart' },
+  'Obstetric / Pregnancy': { title: 'Obstetric Ultrasounds', icon: 'baby',     img: 'images/pregnancy.jpg', pos: '50% 50%', alt: 'Sonographer performing a pregnancy ultrasound with the baby shown on screen' },
+  'Echocardiogram':        { title: 'Echocardiogram',        icon: 'activity', img: 'images/cardiac.jpg', pos: '50% 50%', alt: 'Colour Doppler echocardiogram showing blood flow through the heart' },
 };
 
 const icon = (name) => `<svg class="ic"><use href="#i-${name}"/></svg>`;
@@ -110,7 +110,16 @@ const $$ = (sel) => [...document.querySelectorAll(sel)];
 /* ---------- Appointment form ---------- */
 (function form() {
   const form = $('#appointmentForm');
-  const inputs = [...form.querySelectorAll('input')];
+  const examSelect = $('#fExam');
+  const groups = [...new Set(SERVICES.map(([group]) => group))];
+  groups.forEach((g) => {
+    const og = document.createElement('optgroup');
+    og.label = CATEGORIES[g].title;
+    SERVICES.filter(([group]) => group === g).forEach(([, name, price]) => og.append(new Option(`${name} ($${price})`, name)));
+    examSelect.append(og);
+  });
+
+  const inputs = [...form.querySelectorAll('input, select')];
   const status = $('#formMessage');
   const isValid = (i) => i.value.trim() !== '' && i.checkValidity();
 
@@ -118,20 +127,21 @@ const $$ = (sel) => [...document.querySelectorAll(sel)];
     inputs.forEach((i) => i.closest('.field').classList.toggle('valid', isValid(i)));
   }
 
-  inputs.forEach((i) => i.addEventListener('input', update));
+  inputs.forEach((i) => { i.addEventListener('input', update); i.addEventListener('change', update); });
   update();
 
   form.addEventListener('submit', (e) => {
     e.preventDefault();
     const bad = inputs.find((i) => !isValid(i));
     if (bad) {
-      status.textContent = `Please enter a valid ${bad.closest('.field').querySelector('label').textContent.toLowerCase()}.`;
+      status.textContent = bad === examSelect ? 'Please choose an exam.' : `Please enter a valid ${bad.closest('.field').querySelector('label').textContent.toLowerCase()}.`;
       status.className = 'form-message warning';
       bad.focus();
       return;
     }
     const d = new FormData(form);
-    const body = `Appointment request: Cupid Imaging LLC\n\nName: ${d.get('name')}\nEmail: ${d.get('email')}\nPhone: ${d.get('phone')}\nCity / ZIP: ${d.get('location')}`;
+    const body = `Appointment request: Cupid Imaging LLC\n\nName: ${d.get('name')}\nEmail: ${d.get('email')}\nPhone: ${d.get('phone')}\nCity / ZIP: ${d.get('location')}
+Exam: ${d.get('exam')}`;
     window.location.href = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent('Mobile ultrasound appointment request')}&body=${encodeURIComponent(body)}`;
     status.textContent = 'Your email app should open with the request. Send that email and we will call to confirm.';
     status.className = 'form-message success';

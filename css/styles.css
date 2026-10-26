@@ -156,9 +156,13 @@ main > section { scroll-margin-top: var(--header-h); }
 .row strong { font-size: 16px; font-weight: 800; color: var(--mag); font-variant-numeric: tabular-nums; }
 .more { display: none; }
 .empty { column-span: all; padding: 32px; border-radius: 16px; background: #fff; text-align: center; color: var(--muted); }
-.price-note { display: flex; gap: 14px; align-items: flex-start; margin-top: 6px; padding: 18px 22px; border: 1px solid var(--line); border-radius: 16px; background: #fff; font-size: 15px; color: var(--muted); }
+.price-note { margin-top: 6px; padding: 20px 24px; border: 1px solid var(--line); border-radius: 16px; background: #fff; font-size: 15px; color: var(--muted); }
+.price-note h3 { display: flex; align-items: center; gap: 12px; margin: 0 0 12px; font-size: 18px; color: var(--navy); }
 .price-note i { display: grid; place-items: center; flex-shrink: 0; width: 34px; height: 34px; border-radius: 10px; background: var(--pink-l); color: var(--rose); }
 .price-note .ic { width: 18px; height: 18px; }
+.price-note ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
+.price-note li { display: flex; gap: 10px; align-items: flex-start; }
+.price-note li .ic { flex-shrink: 0; width: 16px; height: 16px; margin-top: 3px; color: var(--rose); }
 .price-note strong { color: var(--navy); }
 
 /* ---------- What to expect ---------- */
@@ -233,11 +237,19 @@ main > section { scroll-margin-top: var(--header-h); }
 .inp > .ic { position: absolute; left: 16px; top: 50%; transform: translateY(-50%); width: 18px; height: 18px; color: #b98aad; pointer-events: none; }
 .inp:focus-within > .ic { color: var(--rose); }
 .field input { display: block; width: 100%; height: 52px; padding: 0 42px 0 46px; border: 1.5px solid var(--line); border-radius: 14px; background: var(--pink-p); font-size: 16px; }
+.field-wide { grid-column: 1 / -1; }
+.field select { display: block; width: 100%; height: 52px; padding: 0 70px 0 46px; border: 1.5px solid var(--line); border-radius: 14px; background: var(--pink-p) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23b98aad' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E") no-repeat right 42px center / 16px; font: inherit; font-size: 16px; color: var(--navy); -webkit-appearance: none; appearance: none; text-overflow: ellipsis; cursor: pointer; }
+.field select:invalid { color: #9a8a9a; }
+.field select option, .field select optgroup { color: var(--navy); }
+.field select:focus { outline: none; border-color: var(--plum); background-color: #fff; box-shadow: 0 0 0 4px rgba(186, 73, 157, .14); }
 .field input:focus { outline: none; border-color: var(--plum); background: #fff; box-shadow: 0 0 0 4px rgba(186, 73, 157, .14); }
 .ok { position: absolute; right: 12px; top: 50%; display: grid; place-items: center; width: 22px; height: 22px; border-radius: 50%; background: #1fae6b; color: #fff; opacity: 0; transform: translateY(-50%) scale(.4); transition: opacity .2s, transform .2s; }
 .ok .ic { width: 12px; height: 12px; stroke-width: 3; }
 .field.valid .ok { opacity: 1; transform: translateY(-50%) scale(1); }
 .form-actions { margin-top: 24px; }
+.form-note { display: flex; align-self: flex-start; max-width: 100%; align-items: center; gap: 10px; margin-top: 14px; padding: 8px 16px 8px 8px; border: 1px solid var(--line); border-radius: 14px; background: var(--pink-p); font-size: 14.5px; font-weight: 600; color: var(--navy); }
+.form-note i { display: grid; place-items: center; flex-shrink: 0; width: 28px; height: 28px; border-radius: 10px; background: var(--pink-l); color: var(--rose); }
+.form-note .ic { width: 16px; height: 16px; }
 .form-actions .btn { width: 100%; height: 56px; font-size: 16px; }
 .form-message { margin-top: 12px; font-size: 14px; }
 .form-message.warning, .form-message.success { padding: 12px 14px; border-radius: 12px; }
@@ -402,7 +414,8 @@ footer .brand strong { color: #fff; }
   .row strong { font-size: 14.5px; }
   .cat.collapsible:not(.expanded) .row:nth-child(n+5) { display: none; }
   .more { display: block; width: calc(100% - 32px); height: 42px; margin: 2px 16px 14px; border: 1.5px dashed #ebbfdc; border-radius: 12px; background: var(--pink-p); font-size: 13.5px; font-weight: 700; color: var(--mag); cursor: pointer; }
-  .price-note { gap: 10px; padding: 14px; font-size: 13px; }
+  .price-note { padding: 16px; font-size: 14px; }
+  .price-note h3 { font-size: 16px; gap: 10px; }
   .price-note i { width: 28px; height: 28px; }
 
   /* what to expect: tappable tiles + tabs */
@@ -461,6 +474,7 @@ footer .brand strong { color: #fff; }
   .field:nth-child(-n+2) { grid-column: 1 / -1; }
   .field label { margin-bottom: 4px; font-size: 12px; }
   .field input { height: 46px; padding: 0 32px 0 38px; border-radius: 12px; }
+  .field select { height: 46px; padding: 0 58px 0 38px; border-radius: 12px; background-position: right 32px center; font-size: 16px; }
   .inp > .ic { left: 12px; width: 16px; height: 16px; }
   .ok { right: 9px; width: 19px; height: 19px; }
   .form-actions { margin-top: 14px; }
