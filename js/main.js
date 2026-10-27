@@ -141,11 +141,198 @@ const $$ = (sel) => [...document.querySelectorAll(sel)];
     }
     const d = new FormData(form);
     const body = `Appointment request: Cupid Imaging LLC\n\nName: ${d.get('name')}\nEmail: ${d.get('email')}\nPhone: ${d.get('phone')}\nCity / ZIP: ${d.get('location')}
-Exam: ${d.get('exam')}`;
+Exam: ${d.get('exam')}
+Details: ${d.get('details').trim() || '-'}`;
     window.location.href = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent('Mobile ultrasound appointment request')}&body=${encodeURIComponent(body)}`;
     status.textContent = 'Your email app should open with the request. Send that email and we will call to confirm.';
     status.className = 'form-message success';
   });
+})();
+
+/* ---------- Exam dropdown: custom list that fits the screen (bottom sheet on phones) ---------- */
+(function examDropdown() {
+  const select = $('#fExam');
+  if (!select) return;
+  const phone = window.matchMedia('(max-width: 600px)');
+  const placeholder = select.options[0].text;
+  const label = document.querySelector('label[for="fExam"]');
+  label.id = 'fExamLabel';
+
+  const trigger = document.createElement('button');
+  trigger.type = 'button';
+  trigger.id = 'fExamBtn';
+  trigger.className = 'dd-trigger';
+  trigger.setAttribute('aria-haspopup', 'listbox');
+  trigger.setAttribute('aria-expanded', 'false');
+  trigger.setAttribute('aria-controls', 'examList');
+  trigger.setAttribute('aria-labelledby', 'fExamLabel fExamValue');
+  trigger.innerHTML = '<span class="dd-value" id="fExamValue"></span>';
+  const valueEl = trigger.firstChild;
+  label.htmlFor = 'fExamBtn';
+  select.classList.add('is-enhanced');
+  select.tabIndex = -1;
+  select.setAttribute('aria-hidden', 'true');
+  select.after(trigger);
+  // The form's validation focuses the select when no exam is chosen; send that focus to the button.
+  select.addEventListener('focus', () => trigger.focus());
+
+  const backdrop = document.createElement('div');
+  backdrop.className = 'dd-backdrop';
+  const panel = document.createElement('div');
+  panel.className = 'dd-panel';
+  panel.innerHTML = `<div class="dd-head"><strong>${placeholder}</strong><button type="button" class="dd-close" aria-label="Close">${icon('x')}</button></div>
+    <div class="dd-list" id="examList" role="listbox" tabindex="-1" aria-labelledby="fExamLabel"></div>`;
+  const list = panel.querySelector('.dd-list');
+
+  const opts = [];
+  [...select.querySelectorAll('optgroup')].forEach((og, gi) => {
+    const group = document.createElement('div');
+    group.setAttribute('role', 'group');
+    group.setAttribute('aria-labelledby', `examGrp${gi}`);
+    const head = document.createElement('div');
+    head.className = 'dd-group';
+    head.id = `examGrp${gi}`;
+    head.textContent = og.label;
+    group.append(head);
+    [...og.children].forEach((o) => {
+      const m = o.text.match(/^(.*) \((\$\d+)\)$/);
+      const opt = document.createElement('div');
+      opt.className = 'dd-opt';
+      opt.id = `examOpt${opts.length}`;
+      opt.setAttribute('role', 'option');
+      opt.dataset.value = o.value;
+      const name = document.createElement('span');
+      name.textContent = m ? m[1] : o.text;
+      const price = document.createElement('b');
+      price.textContent = m ? m[2] : '';
+      opt.append(name, price);
+      opt.addEventListener('click', () => choose(opt));
+      opt.addEventListener('mousemove', () => { if (opts[active] !== opt) setActive(opts.indexOf(opt), false); });
+      group.append(opt);
+      opts.push(opt);
+    });
+    list.append(group);
+  });
+  document.body.append(backdrop, panel);
+
+  let active = -1;
+  let isOpen = false;
+
+  function setActive(i, scroll = true) {
+    if (opts[active]) opts[active].classList.remove('active');
+    active = Math.max(0, Math.min(opts.length - 1, i));
+    const o = opts[active];
+    o.classList.add('active');
+    list.setAttribute('aria-activedescendant', o.id);
+    if (scroll) o.scrollIntoView({ block: 'nearest' });
+  }
+
+  function render() {
+    const has = select.value !== '';
+    valueEl.textContent = has ? select.selectedOptions[0].text : placeholder;
+    trigger.classList.toggle('placeholder', !has);
+    opts.forEach((o) => o.setAttribute('aria-selected', String(has && o.dataset.value === select.value)));
+  }
+
+  // Desktop: sit under the field (or above it if there is more room), same width, never past the screen edge.
+  // Phone: CSS turns the panel into a bottom sheet.
+  function layout() {
+    const sheet = phone.matches;
+    backdrop.classList.toggle('open', sheet);
+    document.documentElement.classList.toggle('dd-lock', sheet);
+    if (sheet) { panel.style.cssText = ''; return; }
+    const r = trigger.getBoundingClientRect();
+    if (r.bottom < 0 || r.top > innerHeight) { close(false); return; }
+    const gap = 6;
+    const edge = 12;
+    const below = innerHeight - r.bottom - gap - edge;
+    const above = r.top - gap - edge;
+    const up = below < 240 && above > below;
+    panel.style.left = `${r.left}px`;
+    panel.style.width = `${r.width}px`;
+    panel.style.maxHeight = `${Math.max(160, Math.min(360, up ? above : below))}px`;
+    panel.style.top = up ? '' : `${r.bottom + gap}px`;
+    panel.style.bottom = up ? `${innerHeight - r.top + gap}px` : '';
+  }
+
+  function open() {
+    if (isOpen) return;
+    isOpen = true;
+    panel.classList.add('open');
+    layout();
+    trigger.setAttribute('aria-expanded', 'true');
+    list.focus({ preventScroll: true });
+    const cur = opts.findIndex((o) => o.getAttribute('aria-selected') === 'true');
+    if (cur >= 0) {
+      setActive(cur, false);
+      opts[cur].scrollIntoView({ block: 'center' });
+    } else {
+      if (opts[active]) opts[active].classList.remove('active');
+      active = -1;
+      list.removeAttribute('aria-activedescendant');
+      list.scrollTop = 0;
+    }
+  }
+
+  function close(refocus = true) {
+    if (!isOpen) return;
+    isOpen = false;
+    panel.classList.remove('open');
+    backdrop.classList.remove('open');
+    document.documentElement.classList.remove('dd-lock');
+    trigger.setAttribute('aria-expanded', 'false');
+    if (refocus) trigger.focus({ preventScroll: true });
+  }
+
+  function choose(opt) {
+    select.value = opt.dataset.value;
+    select.dispatchEvent(new Event('change', { bubbles: true }));
+    render();
+    close();
+  }
+
+  trigger.addEventListener('click', () => (isOpen ? close() : open()));
+  trigger.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowDown' || e.key === 'ArrowUp') { e.preventDefault(); open(); }
+  });
+
+  let typed = '';
+  let typedTimer;
+  list.addEventListener('keydown', (e) => {
+    const keys = {
+      ArrowDown: () => setActive(active + 1),
+      ArrowUp: () => setActive(active < 0 ? opts.length - 1 : active - 1),
+      Home: () => setActive(0),
+      End: () => setActive(opts.length - 1),
+      PageDown: () => setActive(active + 8),
+      PageUp: () => setActive(active - 8),
+      Enter: () => { if (active >= 0) choose(opts[active]); },
+      ' ': () => { if (active >= 0) choose(opts[active]); },
+      Escape: () => close(),
+      Tab: () => close(),
+    };
+    if (keys[e.key]) { e.preventDefault(); keys[e.key](); return; }
+    // Type a few letters to jump to a matching exam.
+    if (e.key.length === 1 && e.key.trim()) {
+      clearTimeout(typedTimer);
+      typed += e.key.toLowerCase();
+      typedTimer = setTimeout(() => { typed = ''; }, 600);
+      const start = typed.length === 1 ? active + 1 : Math.max(active, 0);
+      const order = [...opts.slice(start), ...opts.slice(0, start)];
+      const hit = order.find((o) => o.firstChild.textContent.toLowerCase().startsWith(typed));
+      if (hit) setActive(opts.indexOf(hit));
+    }
+  });
+
+  backdrop.addEventListener('click', () => close());
+  panel.querySelector('.dd-close').addEventListener('click', () => close());
+  document.addEventListener('pointerdown', (e) => {
+    if (isOpen && !panel.contains(e.target) && !trigger.contains(e.target)) close(false);
+  });
+  window.addEventListener('resize', () => { if (isOpen) layout(); });
+  window.addEventListener('scroll', () => { if (isOpen && !phone.matches) layout(); }, { passive: true });
+  select.addEventListener('change', render);
+  render();
 })();
 
 /* ---------- "What to expect" tabs (phones only) ---------- */
