@@ -36,7 +36,7 @@ p { margin: 0; }
 
 h1, h2, h3, h4 { margin: 0; color: var(--navy); letter-spacing: -.02em; }
 h1 { font-size: clamp(38px, 4.2vw, 54px); line-height: 1.08; font-weight: 800; text-wrap: balance; }
-h2 { font-size: clamp(28px, 3.1vw, 40px); line-height: 1.15; font-weight: 800; }
+h2 { font-size: clamp(31px, 3.4vw, 44px); line-height: 1.15; font-weight: 800; }
 h3 { font-size: 19px; line-height: 1.3; font-weight: 700; }
 
 .ic { width: 1em; height: 1em; flex-shrink: 0; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
@@ -146,13 +146,11 @@ main > section { scroll-margin-top: var(--header-h); }
 .cat figure::after { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(91, 33, 182, 0) 35%, rgba(91, 33, 182, .88)); }
 .cat figcaption { position: absolute; z-index: 1; left: 22px; right: 22px; bottom: 16px; display: flex; justify-content: space-between; align-items: flex-end; gap: 12px; }
 .cat figcaption h3 { display: flex; align-items: center; gap: 10px; font-size: 21px; color: #fff; }
-.cat figcaption h3 i { display: grid; place-items: center; width: 34px; height: 34px; border-radius: 10px; background: var(--rose); }
-.cat figcaption h3 .ic { width: 18px; height: 18px; color: #fff; }
 .cat figcaption span { padding: 4px 10px; border-radius: 999px; background: rgba(255, 255, 255, .18); font-size: 13px; font-weight: 600; color: #fff; white-space: nowrap; }
 .rows { padding: 6px 22px 10px; }
 .row { display: flex; align-items: center; gap: 14px; padding: 12px 0; font-size: 15px; }
 .row + .row { border-top: 1px dashed var(--line); }
-.row span { flex: 1; }
+.row span { flex: 1; font-weight: 700; color: var(--navy); }
 .row strong { font-size: 16px; font-weight: 800; color: var(--mag); font-variant-numeric: tabular-nums; }
 .more { display: none; }
 .empty { column-span: all; padding: 32px; border-radius: 16px; background: #fff; text-align: center; color: var(--muted); }
@@ -173,7 +171,7 @@ main > section { scroll-margin-top: var(--header-h); }
 .book-opts i { display: grid; place-items: center; flex-shrink: 0; width: 46px; height: 46px; border-radius: 14px; background: var(--pink-l); color: var(--mag); }
 .book-opts i .ic { width: 21px; height: 21px; }
 .book-opts strong { display: block; font-size: 15.5px; line-height: 1.3; color: var(--navy); }
-.book-opts small { display: block; font-size: 13px; color: var(--muted); overflow-wrap: anywhere; }
+.book-opts small { display: block; font-size: 13px; color: var(--deep); overflow-wrap: anywhere; }
 .book-opts .m { display: none; }
 
 .tabs { display: none; }
@@ -187,8 +185,8 @@ main > section { scroll-margin-top: var(--header-h); }
 .tl li { position: relative; display: flex; gap: 16px; }
 .tl li::before { counter-increment: step; content: counter(step); position: relative; z-index: 1; display: grid; place-items: center; flex-shrink: 0; width: 36px; height: 36px; border: 2px solid var(--plum); border-radius: 50%; background: #fff; font-size: 14px; font-weight: 800; color: var(--mag); }
 .tl li:not(:last-child)::after { content: ''; position: absolute; left: 17px; top: 40px; bottom: -16px; width: 2px; background: var(--line); }
-.tl h4 { margin: 5px 0 3px; font-size: 16.5px; }
-.tl p { font-size: 15px; color: var(--muted); }
+.tl h4 { margin: 5px 0 3px; font-size: 30px; line-height: 1.25; }
+.tl p { font-size: 16.5px; color: var(--deep); }
 
 /* ---------- Reports & pricing ---------- */
 .rp-grid { display: grid; grid-template-columns: 1.1fr .9fr; gap: 24px; }
@@ -201,14 +199,14 @@ main > section { scroll-margin-top: var(--header-h); }
 .rep-tiles i { display: grid; place-items: center; width: 40px; height: 40px; margin-bottom: 12px; border-radius: 12px; background: var(--pink-l); color: var(--mag); }
 .rep-tiles .ic { width: 19px; height: 19px; }
 .rep-tiles strong { display: block; font-size: 21px; font-weight: 800; line-height: 1.15; letter-spacing: -.02em; color: var(--navy); }
-.rep-tiles span { display: block; margin-top: 2px; font-size: 13.5px; line-height: 1.4; color: var(--muted); }
+.rep-tiles span { display: block; margin-top: 2px; font-size: 13.5px; line-height: 1.4; color: var(--deep); }
 .rep-tiles .hot i { background: var(--rose); color: #fff; }
 .rep-tiles .hot strong { color: var(--rose); }
 .mail-row { display: flex; align-items: center; gap: 14px; margin: 22px 0 0; font-weight: 700; color: var(--navy); }
 .mail-row i { display: grid; place-items: center; flex-shrink: 0; width: 38px; height: 38px; border-radius: 11px; background: var(--rose); color: #fff; }
 .mail-row i .ic { width: 18px; height: 18px; }
 .mail-row span { flex: 1; min-width: 0; overflow-wrap: anywhere; }
-.mail-row small { display: block; font-size: 12.5px; font-weight: 500; color: var(--muted); }
+.mail-row small { display: block; font-size: 12.5px; font-weight: 500; color: var(--deep); }
 .price-card { display: flex; flex-direction: column; justify-content: center; border: 0; background: linear-gradient(160deg, #5B21B6, #7E22CE); color: #f5edff; }
 .price-card .card-title { color: #fff; }
 .benefits { display: grid; gap: 16px; }
@@ -279,7 +277,7 @@ main > section { scroll-margin-top: var(--header-h); }
 .disclaimer details { padding: 22px 26px; border: 1px solid var(--line); border-left: 4px solid var(--rose); border-radius: 14px; background: #fff; }
 .disclaimer summary { display: flex; justify-content: space-between; align-items: center; gap: 16px; list-style: none; cursor: pointer; }
 .disclaimer summary::-webkit-details-marker { display: none; }
-.disclaimer h2 { font-size: 20px; letter-spacing: -.01em; }
+.disclaimer h2 { font-size: 22px; letter-spacing: -.01em; }
 .more-lbl { font-size: 14px; font-weight: 700; color: var(--mag); white-space: nowrap; }
 .disclaimer details[open] .more-lbl .o, .disclaimer details:not([open]) .more-lbl .c { display: none; }
 .disclaimer .first, .disclaimer .rest p { margin-top: 12px; font-size: 15px; line-height: 1.75; color: var(--muted); }
@@ -350,7 +348,7 @@ footer .brand strong { color: #fff; }
 @media (max-width: 600px) {
   body { font-size: 15.5px; }
   .wrap { width: min(1180px, 100% - 32px); }
-  h2 { font-size: 25px; }
+  h2 { font-size: 28px; }
   h3 { font-size: 17px; }
   .sub { font-size: 15px; }
   .section { padding: 52px 0; }
@@ -407,8 +405,6 @@ footer .brand strong { color: #fff; }
   .cat figure { height: 232px; }
   .cat figcaption { left: 16px; right: 16px; bottom: 12px; }
   .cat figcaption h3 { gap: 8px; font-size: 17px; }
-  .cat figcaption h3 i { width: 28px; height: 28px; border-radius: 8px; }
-  .cat figcaption h3 .ic { width: 15px; height: 15px; }
   .rows { padding: 2px 16px 6px; }
   .row { padding: 10px 0; font-size: 14px; }
   .row strong { font-size: 14.5px; }
@@ -440,8 +436,8 @@ footer .brand strong { color: #fff; }
   .tl li { gap: 12px; }
   .tl li::before { width: 32px; height: 32px; font-size: 13px; }
   .tl li:not(:last-child)::after { left: 15px; top: 36px; bottom: -12px; }
-  .tl h4 { margin-top: 4px; font-size: 15px; }
-  .tl p { font-size: 13.5px; }
+  .tl h4 { margin-top: 4px; font-size: 26px; }
+  .tl p { font-size: 15px; }
 
   /* reports & pricing */
   .rp-grid { gap: 14px; }
@@ -465,7 +461,7 @@ footer .brand strong { color: #fff; }
   .appointment .wrap { width: 100%; }
   .appt-card { border: 0; border-radius: 0; background: none; box-shadow: none; }
   .appt-visual { min-height: 0; padding: 150px 16px 84px; }
-  .appt-visual h2 { margin-bottom: 6px; font-size: 23px; }
+  .appt-visual h2 { margin-bottom: 6px; font-size: 25px; }
   .appt-visual p { font-size: 14px; }
   .appt-note { margin-top: 14px; padding: 11px 12px; font-size: 12.5px; }
   .appointment-form { position: relative; z-index: 3; margin: -64px 12px 0; padding: 18px 16px 16px; border: 1px solid var(--line); border-radius: 20px; background: #fff; box-shadow: 0 24px 50px -28px rgba(91, 33, 182, .5); }
@@ -496,7 +492,7 @@ footer .brand strong { color: #fff; }
   /* disclaimer */
   .disclaimer { padding-bottom: 44px; }
   .disclaimer details { padding: 16px; border-radius: 12px; }
-  .disclaimer h2 { font-size: 16px; }
+  .disclaimer h2 { font-size: 17px; }
   .more-lbl { font-size: 13px; }
   .disclaimer .first, .disclaimer .rest p { font-size: 13.5px; line-height: 1.7; }
 
@@ -534,3 +530,11 @@ footer .brand strong { color: #fff; }
   .hero-contact li { gap: 10px; font-size: 14px; }
   .hero-contact i { width: 34px; height: 34px; }
 }
+
+/* What to expect: purple text instead of grey */
+#how .sub, #pricing .sub { color: var(--deep); }
+
+/* Pricing details: nested list and asterisk marker */
+.price-note .sub-list { display: block; margin: 6px 0 0; padding-left: 20px; list-style: disc; color: var(--navy); font-weight: 700; }
+.price-note .sub-list li { display: list-item; margin-top: 2px; }
+.price-note .star { flex-shrink: 0; width: 16px; font-size: 20px; font-weight: 800; line-height: 1; text-align: center; color: var(--rose); }

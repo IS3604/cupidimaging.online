@@ -69,7 +69,7 @@ const $$ = (sel) => [...document.querySelectorAll(sel)];
     art.innerHTML = `
       <figure>
         <img src="${c.img}" alt="${c.alt}" loading="lazy" style="object-position:${c.pos}">
-        <figcaption><h3><i>${icon(c.icon)}</i>${c.title}</h3><span>${items.length} exam${items.length === 1 ? '' : 's'}</span></figcaption>
+        <figcaption><h3>${c.title}</h3><span>${items.length} exam${items.length === 1 ? '' : 's'}</span></figcaption>
       </figure>
       <div class="rows">${items.map(([, name, price]) => `<div class="row"><span>${name}</span><strong>$${price}</strong></div>`).join('')}</div>`;
 
