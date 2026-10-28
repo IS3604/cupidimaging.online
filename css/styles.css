@@ -103,7 +103,7 @@ main > section { scroll-margin-top: var(--header-h); }
 .hero-media img { width: 100%; aspect-ratio: 3 / 2; object-fit: cover; border-radius: 28px; background: #8B5CF6; }
 .hero-card { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 30px; width: 100%; aspect-ratio: 3 / 2; padding: 28px 24px; border: 1px solid rgba(255, 255, 255, .14); border-radius: 28px; background: radial-gradient(circle at 50% 30%, rgba(255, 140, 196, .22), transparent 60%), rgba(255, 255, 255, .06); }
 .hero-logo { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; text-align: center; }
-.hero-tagline { margin: 0; font-size: clamp(16px, 1.5vw, 20px); font-weight: 600; color: #ff8cc4; }
+.hero-tagline { margin: 0; font-size: clamp(16px, 1.5vw, 20px); font-weight: 800; color: #fff; }
 .hero-contact { display: grid; gap: 16px; }
 .hero-contact li { display: flex; align-items: center; gap: 14px; font-size: 20px; font-weight: 600; color: #fff; }
 .hero-contact i { display: grid; place-items: center; flex-shrink: 0; width: 44px; height: 44px; border-radius: 12px; background: rgba(255, 255, 255, .12); }
@@ -121,7 +121,7 @@ main > section { scroll-margin-top: var(--header-h); }
 .about h2 { margin-bottom: 18px; }
 .mission-img { width: 100%; margin: 48px auto 0; }
 .mission-img img { display: block; width: 100%; height: auto; border-radius: 24px; box-shadow: 0 30px 60px -30px rgba(59, 7, 100, .45); }
-.mission-tagline { margin-top: 18px; text-align: center; font-size: clamp(17px, 1.8vw, 22px); font-weight: 700; color: var(--deep); }
+.mission-tagline { margin-top: 18px; text-align: center; font-size: clamp(17px, 1.8vw, 22px); font-weight: 800; color: var(--deep); }
 .lead { padding-left: 20px; border-left: 4px solid var(--rose); font-size: 20px; line-height: 1.55; font-weight: 600; color: var(--navy); }
 
 /* ---------- Services ---------- */
