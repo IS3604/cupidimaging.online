@@ -77,9 +77,7 @@ main > section { scroll-margin-top: var(--header-h); }
 .header { position: sticky; top: 0; z-index: 30; background: #fff; border-bottom: 1px solid var(--line); }
 .nav { display: flex; align-items: center; justify-content: space-between; gap: 24px; min-height: var(--header-h); }
 .brand { display: flex; align-items: center; gap: 12px; text-decoration: none; }
-.brand-mark { display: grid; place-items: center; width: 44px; height: 44px; border-radius: 13px; background: linear-gradient(140deg, var(--rose), var(--plum)); color: #fff; }
-.brand-mark .ic { width: 22px; height: 22px; }
-.brand strong { font-size: 21px; font-weight: 800; color: var(--navy); letter-spacing: -.02em; }
+.brand img { display: block; width: auto; height: 36px; }
 .nav nav { display: flex; align-items: center; gap: 30px; font-size: 15px; font-weight: 600; }
 .nav nav a { text-decoration: none; }
 .nav nav a:not(.btn):hover { color: var(--rose); }
@@ -105,8 +103,6 @@ main > section { scroll-margin-top: var(--header-h); }
 .hero-media img { width: 100%; aspect-ratio: 3 / 2; object-fit: cover; border-radius: 28px; background: #8B5CF6; }
 .hero-card { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 30px; width: 100%; aspect-ratio: 3 / 2; padding: 28px 24px; border: 1px solid rgba(255, 255, 255, .14); border-radius: 28px; background: radial-gradient(circle at 50% 30%, rgba(255, 140, 196, .22), transparent 60%), rgba(255, 255, 255, .06); }
 .hero-logo { display: flex; align-items: center; justify-content: center; gap: 20px; }
-.hero-logo-mark { flex-shrink: 0; display: grid; place-items: center; width: 84px; height: 84px; border-radius: 24px; background: linear-gradient(140deg, var(--rose), var(--plum)); color: #fff; box-shadow: 0 24px 50px -18px rgba(186, 73, 157, .7); }
-.hero-logo-mark .ic { width: 42px; height: 42px; }
 .hero-contact { display: grid; gap: 16px; }
 .hero-contact li { display: flex; align-items: center; gap: 14px; font-size: 20px; font-weight: 600; color: #fff; }
 .hero-contact i { display: grid; place-items: center; flex-shrink: 0; width: 44px; height: 44px; border-radius: 12px; background: rgba(255, 255, 255, .12); }
@@ -122,8 +118,8 @@ main > section { scroll-margin-top: var(--header-h); }
 /* ---------- Mission ---------- */
 .about-grid { max-width: 760px; }
 .about h2 { margin-bottom: 18px; }
-.mission-img { width: min(100%, 380px); margin: 48px auto 0; }
-.mission-img img { display: block; width: 100%; height: auto; }
+.mission-img { width: 100%; margin: 48px auto 0; }
+.mission-img img { display: block; width: 100%; height: auto; border-radius: 24px; box-shadow: 0 30px 60px -30px rgba(59, 7, 100, .45); }
 .lead { padding-left: 20px; border-left: 4px solid var(--rose); font-size: 20px; line-height: 1.55; font-weight: 600; color: var(--navy); }
 
 /* ---------- Services ---------- */
@@ -215,6 +211,8 @@ main > section { scroll-margin-top: var(--header-h); }
 .benefits .ic { width: 14px; height: 14px; color: #ff8cc4; stroke-width: 3; }
 .benefits strong { display: block; font-size: 15.5px; color: #fff; }
 .benefits span { font-size: 14px; }
+.benefits .sub { display: block; margin-top: 4px; padding-left: 18px; list-style: disc; font-size: 14px; }
+.benefits .sub li { display: list-item; color: #f5edff; }
 
 /* ---------- Appointment ---------- */
 .appt-card { display: grid; grid-template-columns: .95fr 1.05fr; overflow: hidden; border: 1px solid var(--line); border-radius: 28px; background: #fff; box-shadow: 0 40px 80px -40px rgba(91, 33, 182, .45); }
@@ -313,7 +311,7 @@ html.dd-lock, html.dd-lock body { overflow: hidden; }
 /* ---------- Footer ---------- */
 footer { background: var(--deep); color: #f3e8ff; font-size: 15px; }
 .f-top { display: grid; grid-template-columns: 1fr minmax(0, 420px); gap: 64px; align-items: start; padding: 60px 0 44px; }
-footer .brand strong { color: #fff; }
+footer .brand img { filter: brightness(0) invert(1); }
 .f-about p { max-width: 24em; margin: 16px 0 22px; }
 .f-area { display: flex; align-items: center; gap: 8px; font-size: 14px; }
 .f-area .ic { width: 15px; height: 15px; color: #fbcfe8; }
@@ -383,9 +381,7 @@ footer .brand strong { color: #fff; }
   .head { margin-bottom: 24px; }
   .head h2 { margin-bottom: 8px; }
   .btn { height: 50px; padding: 0 20px; font-size: 15px; }
-  .brand-mark { width: 38px; height: 38px; border-radius: 11px; }
-  .brand-mark .ic { width: 19px; height: 19px; }
-  .brand strong { font-size: 18px; }
+  .brand img { height: 28px; }
 
   /* hero: photo first, copy below */
   .hero { padding: 0 0 32px; background: var(--deep); }
@@ -399,8 +395,6 @@ footer .brand strong { color: #fff; }
   .hero-contact li { gap: 12px; font-size: clamp(15px, 4.3vw, 17px); }
   .hero-contact i { width: 38px; height: 38px; border-radius: 11px; }
   .hero-contact .ic { width: 18px; height: 18px; }
-  .hero-logo-mark { width: 64px; height: 64px; border-radius: 19px; }
-  .hero-logo-mark .ic { width: 32px; height: 32px; }
   .hero .hero-logo h1 { font-size: 32px; }
   .hero-tag { z-index: 1; left: 16px; bottom: 14px; gap: 8px; padding: 7px 12px; border-radius: 12px; }
   .hero-tag .ic { width: 17px; height: 17px; }
@@ -420,7 +414,8 @@ footer .brand strong { color: #fff; }
 
   /* mission */
   .about h2 { margin-bottom: 12px; }
-  .mission-img { width: min(100%, 280px); margin-top: 28px; }
+  .mission-img { margin-top: 28px; }
+  .mission-img img { border-radius: 16px; }
   .lead { padding-left: 14px; border-left-width: 3px; font-size: 16px; }
 
   /* services */
@@ -557,8 +552,6 @@ footer .brand strong { color: #fff; }
 /* very small phones (320–359px) */
 @media (max-width: 359px) {
   .hero .hero-logo h1 { font-size: 27px; }
-  .hero-logo-mark { width: 54px; height: 54px; border-radius: 16px; }
-  .hero-logo-mark .ic { width: 27px; height: 27px; }
   .hero-contact li { gap: 10px; font-size: 14px; }
   .hero-contact i { width: 34px; height: 34px; }
 }
